@@ -1,0 +1,160 @@
+# Wait 10ms to check files under the current directory
+scan_timeout = 10
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Make prompt single line
+[line_break]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold #fff)'
+error_symbol = '[✗](bold red)'
+
+[package]
+symbol = "󰏗 "
+
+[localip]
+disabled = true
+ssh_only = false
+format = '󰩟 [$localipv4](bold red) '
+
+[sudo]
+#style = "bold green"
+#symbol = "💻 "
+#disabled = false
+
+[username]
+disabled = true
+#style_user = "green bold"
+#style_root = "red bold"
+#format = "[$user]($style) "
+#show_always = true
+
+[hostname]
+disabled = true
+#ssh_only = false
+#format = 'on [$hostname](bold yellow) '
+#trim_at = "."
+
+[directory]
+read_only = " 󰯄"
+truncation_length = 5
+truncate_to_repo = true
+style = "bold blue"
+
+## Substitute directory names with icons
+# [directory.substitutions]
+# 'Documents' = '󰈙'
+# 'Downloads' = ' '
+# 'Music' = ' '
+# 'Pictures' = ' '
+
+[cmd_duration]
+disabled = true
+#min_time = 4
+#show_milliseconds = false
+#style = "bold italic red"
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+style = "bold purple"
+format = '[\[$all_status$ahead_behind\]](bg:#1d2230 fg:bold purple)[](#1d2230) '
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+format = "  [$symbol$context]($style) "
+style = "bold blue"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[c]
+symbol = " "
+commands = [['gcc', '--version']]
+style = "bold yellow"
+format = '[$symbol$version]($style) '
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = "[](#1d2230)󰘬 "
+format = "[$symbol$branch ](bg:#1d2230 fg:bold purple)($style)"
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = "󰘬 "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = "󱄅 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+#pyenv_version_name = true
+format = '  [${symbol}(${version}) (\($virtualenv\) )]($style)'
+style = "bold blue"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[nodejs]
+format = "[ $version](bold #de8175) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+# #cb9e88
