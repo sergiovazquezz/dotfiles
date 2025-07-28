@@ -11,7 +11,7 @@ add_newline = false
 disabled = true
 
 [character]
-success_symbol = '[➜](bold #fff)'
+success_symbol = '[➜](bold #a6da95)'
 error_symbol = '[✗](bold red)'
 
 [package]
@@ -44,7 +44,7 @@ disabled = true
 read_only = " 󰯄"
 truncation_length = 5
 truncate_to_repo = true
-style = "bold blue"
+style = "bold #8aadf4"
 
 ## Substitute directory names with icons
 # [directory.substitutions]
@@ -63,8 +63,8 @@ disabled = true
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
-style = "bold purple"
-format = '[\[$all_status$ahead_behind\]](bg:#1d2230 fg:bold purple)[](#1d2230) '
+style = "bold #f0c6c6"
+format = "[$all_status$ahead_behind]($style)[\\)](bold #c6a0f6) "
 
 [aws]
 symbol = " "
@@ -85,10 +85,10 @@ detect_folders = []
 disabled = false
 
 [c]
-symbol = " "
+# symbol = " "
 commands = [['gcc', '--version']]
 style = "bold yellow"
-format = '[$symbol$version]($style) '
+format = "[clang:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [elixir]
 symbol = " "
@@ -97,8 +97,9 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = "[](#1d2230)󰘬 "
-format = "[$symbol$branch ](bg:#1d2230 fg:bold purple)($style)"
+# symbol = " 󰘬 "
+style = "bold #f0c6c6"
+format = "[git:\\(](bold #c6a0f6)[$branch]($style)"
 
 [golang]
 symbol = " "
@@ -107,7 +108,8 @@ symbol = " "
 symbol = "󰘬 "
 
 [java]
-symbol = " "
+# symbol = " "
+format = "[java:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [julia]
 symbol = " "
@@ -130,7 +132,7 @@ symbol = " "
 [python]
 symbol = " "
 #pyenv_version_name = true
-format = '  [${symbol}(${version}) (\($virtualenv\) )]($style)'
+format = "[py:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 style = "bold blue"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
@@ -153,8 +155,9 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-format = "[ $version](bold #de8175) "
+format = "[node:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
 
+# #de8175
 # #cb9e88
