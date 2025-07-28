@@ -42,11 +42,11 @@ disabled = true
 
 [directory]
 read_only = " 󰯄"
-truncation_length = 5
+truncation_length = 4
 truncate_to_repo = true
 style = "bold #8aadf4"
 
-## Substitute directory names with icons
+# Substitute directory names with icons
 # [directory.substitutions]
 # 'Documents' = '󰈙'
 # 'Downloads' = ' '
@@ -86,15 +86,22 @@ disabled = false
 
 [c]
 # symbol = " "
-commands = [['gcc', '--version']]
-style = "bold yellow"
-format = "[clang:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+commands = [['gcc-15', '--version']]
+format = "[gcc:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+
+[cpp]
+disabled = false
+commands = [['g++-15', '--version']]
+format = "[g++:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+# detect_extensions = ["cpp", "cxx", "cc", "c++", "hpp", "hxx", "h++", "hh"]
 
 [elixir]
-symbol = " "
+# symbol = " "
+format = "[elixir:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [elm]
-symbol = " "
+# symbol = " "
+format = "[elm:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [git_branch]
 # symbol = " 󰘬 "
@@ -102,7 +109,8 @@ style = "bold #f0c6c6"
 format = "[git:\\(](bold #c6a0f6)[$branch]($style)"
 
 [golang]
-symbol = " "
+# symbol = " "
+format = "[golang:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [hg_branch]
 symbol = "󰘬 "
@@ -130,10 +138,9 @@ symbol = " "
 symbol = " "
 
 [python]
-symbol = " "
+# symbol = " "
 #pyenv_version_name = true
 format = "[py:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
-style = "bold blue"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -141,9 +148,11 @@ version_format = "v${raw}"
 
 [ruby]
 symbol = " "
+format = "[ruby:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [rust]
 symbol = " "
+format = "[rust:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [scala]
 symbol = " "
@@ -158,6 +167,3 @@ symbol = " "
 format = "[node:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
-
-# #de8175
-# #cb9e88
