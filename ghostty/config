@@ -1,7 +1,7 @@
 # Font:
 font-family = JetBrainsMono Nerd Font
 # font-family = GeistMono Nerd Font
-font-size = 18
+font-size = 20
 font-thicken = true
 
 # Theme:
@@ -12,7 +12,7 @@ theme = catppuccin-macchiato
 window-colorspace = "display-p3"
 # background-opacity = 0.85
 # background-blur-radius = 75
-adjust-cell-height = 30%
+adjust-cell-height = 25%
 window-decoration = true
 window-save-state = always
 window-vsync = true

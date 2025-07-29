@@ -9,7 +9,7 @@ vim.opt.softtabstop = 2 -- Insert 2 spaces when pressing Tab
 vim.opt.expandtab = true -- Convert tabs to spaces
 
 vim.opt.hlsearch = false -- Highlight search results
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 18
 vim.opt.ignorecase = true -- Make commands case insensitive
 vim.opt.backspace = { "start", "eol", "indent" }
 

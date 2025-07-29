@@ -31,11 +31,11 @@
       "outputColor": "separator"
     },
     {
-      "key": "  {#34}󰌢  Machine ",
+      "key": "  {#34}󰌢  Machine",
       "type": "host"
     },
     {
-      "key": "  {#32}󰍹  Display ",
+      "key": "  {#32}󰍹  Display",
       "type": "display"
     },
     {
@@ -44,20 +44,20 @@
       "outputColor": "separator"
     },
     {
-      "key": "{#34}    User    ",
+      "key": "{#34}    User   ",
       "format": "{user-name}",
       "type": "title"
     },
     {
-      "key": "  {#32}{icon}  Distro  ",
+      "key": "  {#32}{icon}  Distro ",
       "type": "os"
     },
     {
-      "key": "  {#31}  Term    ",
+      "key": "  {#31}  Term   ",
       "type": "terminal"
     },
     {
-      "key": "  {#33}  Shell   ",
+      "key": "  {#33}  Shell  ",
       "type": "shell"
     },
     {
@@ -66,21 +66,21 @@
       "outputColor": "separator"
     },
     {
-      "key": "  {#34}  CPU     ",
+      "key": "  {#34}  CPU    ",
       "type": "cpu",
       "showPeCoreCount": true,
       "temp": true
     },
     {
-      "key": "  {#32}󰾲  GPU     ",
+      "key": "  {#32}󰾲  GPU    ",
       "type": "gpu"
     },
     {
-      "key": "  {#31}  Memory  ",
+      "key": "  {#31}  Memory ",
       "type": "memory"
     },
     {
-      "key": "  {#33}󰉉  Disk    ",
+      "key": "  {#33}󰉉  Disk   ",
       "type": "disk",
       "folders": "/"
     },
@@ -90,16 +90,16 @@
       "outputColor": "separator"
     },
     {
-      "key": "  {#34}  Battery ",
+      "key": "  {#34}  Battery",
       "type": "battery"
     },
     {
-      "key": "  {#32}󰩟  Network ",
+      "key": "  {#32}󰩟  Network",
       "type": "localip",
       "format": "{ipv4} ({ifname})"
     },
     {
-      "key": "  {#31}󰅐  Uptime  ",
+      "key": "  {#31}󰅐  Uptime ",
       "type": "uptime"
     },
     {
