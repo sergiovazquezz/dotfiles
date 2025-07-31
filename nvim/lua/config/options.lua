@@ -2,6 +2,11 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Legends when pressing leader
+-- vim.opt.timeout = true
+-- vim.opt.timeoutlen = 3000
+-- vim.opt.ttimeoutlen = 100
+
 -- Set tab to 2 spaces
 vim.opt.tabstop = 2 -- Display tabs as 2 spaces wide
 vim.opt.shiftwidth = 2 -- Use 2 spaces for indentation
