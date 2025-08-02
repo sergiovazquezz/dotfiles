@@ -28,3 +28,9 @@ VOLUME_66=􀊧
 VOLUME_33=􀊥
 VOLUME_10=􀊡
 VOLUME_0=􀊣
+AIRPODS_PRO=􀪷
+AIRPODS_MAX=􀺹
+
+# DND
+DND_ON=􀆺
+DND_OFF=􀆹

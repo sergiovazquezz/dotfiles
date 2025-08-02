@@ -10,8 +10,8 @@ source "$HOME/.config/sketchybar/icons.sh"
 windows_on_spaces() {
   args=()
 
-  # Get all workspaces and clear any labels (only show workspace numbers)
   for workspace in $(aerospace list-workspaces --all); do
+    # # Get all workspaces and clear any labels
     # icon_strip=" "
     # # Get apps in this workspace - extract app name from "window_id | app_name | window_title" format
     # apps=$(aerospace list-windows --workspace $workspace | cut -d'|' -f2 | sed 's/^ *//; s/ *$//' | sort -u)
@@ -27,6 +27,8 @@ windows_on_spaces() {
     #   # Hide label and background when workspace is empty
     #   args+=(--set space.$workspace label="" label.drawing=off label.background.drawing=off)
     # fi
+
+    # Get the workspaces numbers
     args+=(--set space.$workspace label="" label.drawing=off label.background.drawing=off)
   done
 
