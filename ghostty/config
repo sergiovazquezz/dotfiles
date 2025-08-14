@@ -3,10 +3,11 @@ font-family = JetBrainsMono Nerd Font
 # font-family = GeistMono Nerd Font
 font-size = 20
 font-thicken = true
+font-feature = -calt, -liga, -dlig
 
 # Theme:
 # theme = tokyonight_moon
-theme = catppuccin-macchiato
+theme = catppuccin-mocha
 
 # Window appearance:
 window-colorspace = "display-p3"

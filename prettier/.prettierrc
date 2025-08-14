@@ -2,7 +2,10 @@
   "jsxSingleQuote": true,
   "singleQuote": true,
   "semi": false,
-  "trailingComma": "none",
+  "trailingComma": "es5",
   "useTabs": false,
-  "tabWidth": 2
+  "tabWidth": 2,
+  "printWidth": 100,
+  "arrowParens": "always",
+  "htmlWhitespaceSensitivity": "ignore"
 }

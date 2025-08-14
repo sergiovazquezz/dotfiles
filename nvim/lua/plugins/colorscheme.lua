@@ -123,7 +123,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      flavour = "macchiato",
+      flavour = "mocha",
       transparent_background = true,
       -- no_bold = true,
       styles = {
