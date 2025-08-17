@@ -3,6 +3,7 @@
 dnd=(
   script="$PLUGIN_DIR/dnd.sh"
   label.drawing=off
+  padding_left=10
   update_freq=5
   updates=on
   click_script="$PLUGIN_DIR/dnd.sh"
