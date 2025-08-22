@@ -14,7 +14,6 @@ return {
         -- Linter
         "eslint_d",
         -- Formatter
-        "black",
         "prettierd",
       },
     },

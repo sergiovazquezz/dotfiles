@@ -11,9 +11,6 @@ return {
         css = { "prettierd" },
         html = { "prettierd" },
         markdown = { "prettierd" },
-        c = { "clangd " },
-        cpp = { "clangd" },
-        python = { "black" },
       },
       formatters = {
         prettierd = {
@@ -24,10 +21,10 @@ return {
             "--single-quote=true",
             "--jsx-single-quote=true",
             "--trailing-comma=es5",
-            "--semi=false",
+            "--semi=true",
             "--html-whitespace-sensitivity=ignore",
             "--arrow-parens=always",
-            "--print-width=100",
+            "--print-width=80",
           },
         },
       },

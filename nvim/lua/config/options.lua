@@ -20,6 +20,12 @@ vim.opt.backspace = { "start", "eol", "indent" }
 
 -- vim.opt.mouse = "" -- Disable the mouse
 
+-- Disable window borders
+vim.opt.fillchars = {
+  eob = " ",
+  vert = " ",
+}
+
 -- Lint info command
 vim.api.nvim_create_user_command("LintInfo", function()
   local lint = require("lint")
