@@ -9,7 +9,7 @@ scan_timeout = 10
 add_newline = false
 
 # Prompt with no lang versions
-format = """$character$directory$git_branch$git_status[✗](bold yellow) """
+format = """ $character$directory$git_branch$git_status[✗](bold yellow) """
 
 # Prompt with lang versions
 # format = """$character$directory$git_branch$git_status$c$cpp$elixir$elm$golang$java$python$ruby$rust$nodejs$bun$docker_context$package$localip[✗](bold red) """

@@ -182,9 +182,6 @@ f = [
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-#s = ['layout sticky tiling', 'mode main']
-
 ctrl-alt-cmd-shift-h = ['join-with left', 'mode main']
 ctrl-alt-cmd-shift-j = ['join-with down', 'mode main']
 ctrl-alt-cmd-shift-k = ['join-with up', 'mode main']
@@ -208,6 +205,10 @@ if.app-id = 'com.apple.Notes'
 run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = ['move-node-to-workspace 3']
 
@@ -217,27 +218,16 @@ run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = ['move-node-to-workspace 5']
+run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 5']
 
-# Catch-all rule - everything else goes to workspace 4
+# Everything else
 [[on-window-detected]]
 run = 'move-node-to-workspace 6'
 
-# 623   |                | Notes
-# 9228  | com.todesktop.230313mzl4w4u92 | Cursor
-# 626   |                 | Calendar
-# 58370 |                | Music
-# 5176  |            | Zen
-# 76850 |          | Ghostty
-# 615   |                 | Mail
-# 632   | com.apple.finder              | Finder
-# 68465 |            | Reminders
-
-# force certain workspaces to certain monitors
 # [workspace-to-monitor-force-assignment]
 # 1 = 'main'      # Monitor sequence number from left to right. 1-based indexing
 # 2 = 'main'      # Main monitor

@@ -1,13 +1,14 @@
 # Font:
 font-family = JetBrainsMono Nerd Font
 # font-family = GeistMono Nerd Font
-font-size = 20
+font-size = 19
 font-thicken = true
-font-feature = -calt, -liga, -dlig
+# font-feature = -calt, -liga, -dlig
 
 # Theme:
+theme = tokyonight_night
 # theme = tokyonight_moon
-theme = catppuccin-mocha
+# theme = catppuccin-mocha
 
 # Window appearance:
 window-colorspace = "display-p3"
@@ -32,11 +33,11 @@ macos-titlebar-proxy-icon = hidden
 macos-icon = custom-style
 macos-icon-frame = plastic
 macos-icon-ghost-color = #DFEBF5
-macos-icon-screen-color = #2967cf
-
+# macos-icon-screen-color = #2967cf
+macos-icon-screen-color = #000000
 # Window:
-window-padding-balance = true
-window-padding-x = 20
+# window-padding-balance = true
+# window-padding-x = 20
 window-padding-y = 10
 
 # Mouse:
