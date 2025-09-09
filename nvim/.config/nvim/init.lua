@@ -1,0 +1,52 @@
+-- Leader
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
+
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+
+-- Always have the block cursor
+-- vim.opt.guicursor = "n-v-c-i:block"
+
+-- local function make_snacks_transparent()
+--   -- Core floating window highlights
+--   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "FloatTitle", { bg = "NONE" })
+--
+--   -- Snacks-specific highlights
+--   vim.api.nvim_set_hl(0, "SnacksNotifier", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksNotifierInfo", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksNotifierWarn", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksNotifierError", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksNotifierDebug", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksNotifierTrace", { bg = "NONE" })
+--
+--   -- Snacks picker elements
+--   vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksPickerPreview", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksPickerList", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksPickerInput", { bg = "NONE" })
+--
+--   -- Terminal and lazygit
+--   vim.api.nvim_set_hl(0, "SnacksTerminal", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksLazygit", { bg = "NONE" })
+--
+--   -- Input and other UI elements
+--   vim.api.nvim_set_hl(0, "SnacksInput", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksLayoutBox", { bg = "NONE" })
+--
+--   -- Dashboard elements (if using snacks dashboard)
+--   vim.api.nvim_set_hl(0, "SnacksDashboard", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { bg = "NONE" })
+--   vim.api.nvim_set_hl(0, "SnacksDashboardFooter", { bg = "NONE" })
+-- end
+--
+-- -- Apply immediately and on colorscheme changes
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = make_snacks_transparent,
+-- })
+--
+-- -- Apply for current session
+-- make_snacks_transparent()

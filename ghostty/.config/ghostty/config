@@ -1,0 +1,57 @@
+# Font:
+font-family = JetBrainsMono Nerd Font
+# font-family = GeistMono Nerd Font
+font-size = 19
+font-thicken = true
+# font-feature = -calt, -liga, -dlig
+
+# Theme:
+# theme = tokyonight_night
+# theme = tokyonight_moon
+theme = rose-pine-moon
+# theme = catppuccin-mocha
+
+# Window appearance:
+window-colorspace = "display-p3"
+# background-opacity = 0.85
+# background-blur-radius = 75
+adjust-cell-height = 25%
+window-decoration = true
+window-save-state = always
+window-vsync = true
+
+# # Underline
+# adjust-underline-thickness = 3
+# adjust-underline-position = 30%
+
+
+# MacOS settings
+macos-titlebar-style = hidden
+macos-option-as-alt = false
+macos-titlebar-proxy-icon = hidden
+
+# Icon
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = #DFEBF5
+# macos-icon-screen-color = #2967cf
+macos-icon-screen-color = #000000
+# Window:
+# window-padding-balance = true
+# window-padding-x = 20
+window-padding-y = 10
+
+# Mouse:
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+# Cursor:
+cursor-style = block
+cursor-style-blink = false
+
+# Shell:
+shell-integration-features = no-cursor,sudo,no-title
+clipboard-read = allow
+
+# Other:
+copy-on-select = clipboard
