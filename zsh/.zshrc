@@ -22,16 +22,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# Aliases
-alias ls='eza -l'
-alias cat='bat'
-alias brewup='brew update && brew upgrade'
-alias drizzle-studio-bun='bun drizzle-kit studio --verbose'
-alias drizzle-studio-pnpm='nvm use --lts && pnpm drizzle-kit studio --verbose'
-alias prettier-write-bun='bunx prettier . --write'
-alias prettier-write='pnpm dlx prettier . --write'
-alias vim='nvim'
-
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads nvm
@@ -68,8 +58,19 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Fzf Rose Pine Moon
 export FZF_DEFAULT_OPTS="
-	--color=fg:#908caa,bg:#232136,hl:#ea9a97
-	--color=fg+:#e0def4,bg+:#393552,hl+:#ea9a97
-	--color=border:#44415a,header:#3e8fb0,gutter:#232136
-	--color=spinner:#f6c177,info:#9ccfd8
-	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+  --color=fg:#908caa,bg:#232136,hl:#ea9a97
+  --color=fg+:#e0def4,bg+:#393552,hl+:#ea9a97
+  --color=border:#44415a,header:#3e8fb0,gutter:#232136
+  --color=spinner:#f6c177,info:#9ccfd8
+  --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+
+# Aliases
+alias ls='eza -l'
+alias cat='bat'
+alias brewup='brew update && brew upgrade'
+alias drizzle-studio='pnpm drizzle-kit studio --verbose'
+alias prettier-write='pnpm dlx prettier . --write'
+alias drizzle-studio-bun='bun drizzle-kit studio --verbose'
+alias prettier-write-bun='bunx prettier . --write'
+alias vim='nvim'
+alias cd='z'
