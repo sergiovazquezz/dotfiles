@@ -17,10 +17,11 @@ export TRANSPARENT=0x00000000
 export BAR_COLOR=$TRANSPARENT
 export ICON_COLOR=$AQUA  # Color of all icons
 export LABEL_COLOR=$AQUA # Color of all labels
-# export BACKGROUND_1=0x903c3e4f
-# export BACKGROUND_2=0x90494d64
-export BACKGROUND_1=$TRANSPARENT
-export BACKGROUND_2=$TRANSPARENT
+export BACKGROUND_1=0x903c3e4f
+export BACKGROUND_2=0x90494d64
+
+# Box backgrounds for grouping items
+export BOX_BACKGROUND=0xB32F2A51
 
 export POPUP_BACKGROUND_COLOR=0xff24273a
 export POPUP_BORDER_COLOR=$WHITE

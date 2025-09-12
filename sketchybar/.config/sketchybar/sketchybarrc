@@ -60,13 +60,56 @@ sketchybar --default "${defaults[@]}"
 source "$ITEM_DIR/spaces.sh"
 # source "$ITEM_DIR/front_app.sh"
 
-# Right
+# Right - Add items with separators in the correct order
+# Remember: right side items are positioned right-to-left, so we need to add in reverse visual order
+
+# Calendar (rightmost visually, so add first)
 source "$ITEM_DIR/calendar.sh"
+
+# Separator 1 (between calendar and system)
+sketchybar --add item separator1 right \
+  --set separator1 \
+  padding_left=2 \
+  padding_right=2 \
+  background.drawing=off \
+  icon.drawing=off
+
+# System status items (middle group)
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/dnd.sh"
 source "$ITEM_DIR/volume.sh"
+
+# Separator 2 (between system and performance)
+sketchybar --add item separator2 right \
+  --set separator2 \
+  padding_left=2 \
+  padding_right=2 \
+  background.drawing=off \
+  icon.drawing=off
+
+# Performance items (leftmost visually, so add last)
+source "$ITEM_DIR/ram.sh"
 source "$ITEM_DIR/cpu.sh"
+
+# Create brackets for visual grouping
+sketchybar --add bracket calendar_box calendar \
+   --set calendar_box background.color=$BOX_BACKGROUND \
+   background.corner_radius=6 \
+   background.drawing=on \
+   background.height=30
+
+sketchybar --add bracket system_box battery wifi dnd volume_icon \
+   --set system_box background.color=$BOX_BACKGROUND \
+   background.corner_radius=6 \
+   background.drawing=on \
+   background.height=30
+
+sketchybar --add bracket performance_box ram cpu \
+   --set performance_box background.color=$BOX_BACKGROUND \
+   background.corner_radius=6 \
+   background.drawing=on \
+   background.height=30
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

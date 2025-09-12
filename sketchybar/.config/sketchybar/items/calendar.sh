@@ -4,6 +4,7 @@ calendar=(
   icon.font="$FONT:Semibold:13.0"
   label.font="$FONT:Semibold:13.0"
   padding_left=10
+  padding_right=10
   update_freq=30
   script="$PLUGIN_DIR/calendar.sh"
 )

@@ -13,8 +13,8 @@ theme = rose-pine-moon
 
 # Window appearance:
 window-colorspace = "display-p3"
-# background-opacity = 0.85
-# background-blur-radius = 75
+background-opacity = 0.85
+background-blur-radius = 75
 adjust-cell-height = 25%
 window-decoration = true
 window-save-state = always
@@ -23,7 +23,6 @@ window-vsync = true
 # # Underline
 # adjust-underline-thickness = 3
 # adjust-underline-position = 30%
-
 
 # MacOS settings
 macos-titlebar-style = hidden

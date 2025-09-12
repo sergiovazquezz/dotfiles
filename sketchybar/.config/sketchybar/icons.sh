@@ -14,6 +14,10 @@ AEROSPACE_PARENT_ZOOM=􀥃
 AEROSPACE_FLOAT=􀢌
 AEROSPACE_GRID=􀧍
 
+# Calendar
+CALENDAR=􀐫
+CALENDAR2=􀐬
+
 # Battery Icons
 BATTERY_100=􀛨
 BATTERY_75=􀺸
@@ -36,4 +40,5 @@ DND_ON=􀆺
 DND_OFF=􀆹
 
 # System components
-CPU=
+CPU=􀧓
+RAM=􀫦

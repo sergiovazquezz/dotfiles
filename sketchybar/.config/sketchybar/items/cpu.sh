@@ -1,11 +1,12 @@
 #!/bin/bash
 
 cpu=(
-  icon=􀧓
+  icon=$CPU
   icon.color=$AQUA
   label.drawing=on
   label.color=$LABEL_COLOR
-  update_freq=10
+  padding_left=10
+  update_freq=5
   updates=on
   script="$PLUGIN_DIR/cpu.sh"
 )

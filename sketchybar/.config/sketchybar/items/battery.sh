@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# To enable the percentage, set label.drawing to on
-
 battery=(
   script="$PLUGIN_DIR/battery.sh"
   icon.font="$FONT:Regular:19.0"
   padding_left=10
-  label.drawing=off
+  padding_right=10
+  label.drawing=on
   update_freq=120
   updates=on
 )

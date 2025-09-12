@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7")
+SPACE_ICONS=(":terminal:" ":zen_browser:" "􀬚" "􀉉" "􀫀" ":messages:")
 
 # Create space items that only show numbers
 sid=0
@@ -8,11 +8,19 @@ spaces=()
 for i in "${!SPACE_ICONS[@]}"; do
   sid=$(($i + 1))
 
+  # Check if icon starts with ":" to determine if it's an app font icon
+  if [[ ${SPACE_ICONS[i]} == :* ]]; then
+    icon_font="sketchybar-app-font:Regular:16.0"
+  else
+    icon_font="$FONT:Semibold:15.0"
+  fi
+
   space=(
     icon=${SPACE_ICONS[i]}
-    icon.padding_right=20
+    icon.padding_right=10
+    icon.padding_left=10
     icon.highlight_color=$RED
-    icon.font="$FONT:Bold:16.0"
+    icon.font="$icon_font"
     script="$PLUGIN_DIR/space.sh"
   )
 
@@ -22,9 +30,8 @@ for i in "${!SPACE_ICONS[@]}"; do
 done
 
 spaces=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
-  background.border_width=1
+  background.color=$BOX_BACKGROUND
+  background.corner_radius=6
   background.drawing=on
 )
 
