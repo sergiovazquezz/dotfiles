@@ -28,7 +28,7 @@ return {
     picker = {
       enabled = true,
       layout = {
-        preset = "default",
+        preset = "telescope",
         cycle = false,
       },
       matcher = {

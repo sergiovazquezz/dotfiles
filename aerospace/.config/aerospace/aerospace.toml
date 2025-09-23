@@ -30,21 +30,21 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE && ~/.config/sketchybar/plugins/update_workspace_icons.sh',
+    '/bin/bash',
+    '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE && ~/.config/sketchybar/plugins/update_workspace_icons.sh',
 ]
 
 [key-mapping]
 preset = 'qwerty'
 
 [gaps]
-inner.horizontal = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 9]
-inner.vertical = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 9]
-outer.left = [{ monitor.built-in = 3 }, { monitor.main = 59 }, 3]
-outer.right = [{ monitor.built-in = 3 }, { monitor.main = 59 }, 3]
-outer.top = [{ monitor.built-in = 12 }, { monitor.main = 60 }, 12]
-outer.bottom = [{ monitor.built-in = 2 }, { monitor.main = 50 }, 2]
+inner.horizontal = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
+inner.vertical = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
+outer.left = [{ monitor.built-in = 3 }, { monitor.main = 59 }, 55]
+outer.right = [{ monitor.built-in = 3 }, { monitor.main = 59 }, 55]
+outer.top = [{ monitor.built-in = 6 }, { monitor.main = 60 }, 55]
+outer.bottom = [{ monitor.built-in = 2 }, { monitor.main = 50 }, 55]
 
 [mode.main.binding]
 
@@ -65,7 +65,12 @@ outer.bottom = [{ monitor.built-in = 2 }, { monitor.main = 50 }, 2]
 # App shortcuts
 ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Zen.app'
 ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+# ctrl-alt-cmd-g = '''exec-and-forget open -a /Applications/Brave\ Browser.app'''
 ctrl-alt-cmd-d = 'exec-and-forget open -a /Applications/Discord.app'
+ctrl-alt-cmd-m = 'exec-and-forget open -a Mail'
+ctrl-alt-cmd-r = 'exec-and-forget open -a Reminders'
+ctrl-alt-cmd-p = 'exec-and-forget open -a Music'
+ctrl-alt-cmd-c = 'exec-and-forget open -a Calendar'
 ctrl-alt-cmd-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 
 # See: https://nikitabobko.github.ioeAeroSpace/commands#layout
@@ -153,6 +158,10 @@ run = ['move-node-to-workspace 1']
 if.app-id = 'app.zen-browser.zen'
 run = ['move-node-to-workspace 2']
 
+# [[on-window-detected]]
+# if.app-id = 'com.brave.Browser'
+# run = ['move-node-to-workspace 2']
+
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
 run = ['move-node-to-workspace 4']
@@ -177,6 +186,10 @@ run = ['move-node-to-workspace 5']
 if.app-id = 'com.apple.mail'
 run = ['move-node-to-workspace 6']
 
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = ['move-node-to-workspace 6']
+
 # Netflix
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari.WebApp.414501BE-67F1-4171-A782-928172DBCB25'
@@ -192,11 +205,11 @@ run = ['move-node-to-workspace 7']
 run = 'move-node-to-workspace 3'
 
 [workspace-to-monitor-force-assignment]
-# 1 = 'main'
-# 2 = 'main'
-# 3 = 'main'
-# 4 = 'main'
-# 5 = 'main'
-# 6 = 'secondary'
-# 7 = 'secondary'
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = 'secondary'
 8 = 'secondary'

@@ -7,10 +7,10 @@
 -- vim.opt.timeoutlen = 3000
 -- vim.opt.ttimeoutlen = 100
 
--- Set tab to 2 spaces
-vim.opt.tabstop = 2 -- Display tabs as 2 spaces wide
-vim.opt.shiftwidth = 2 -- Use 2 spaces for indentation
-vim.opt.softtabstop = 2 -- Insert 2 spaces when pressing Tab
+-- Set tab to 4 spaces
+vim.opt.tabstop = 4 -- Display tabs as 2 spaces wide
+vim.opt.shiftwidth = 4 -- Use 2 spaces for indentation
+vim.opt.softtabstop = 4 -- Insert 2 spaces when pressing Tab
 vim.opt.expandtab = true -- Convert tabs to spaces
 
 vim.opt.hlsearch = false -- Highlight search results
@@ -25,6 +25,9 @@ vim.opt.fillchars = {
   eob = " ",
   vert = " ",
 }
+
+-- vim.opt.guicursor = "i:block-blinkwait300-blinkoff200-blinkon600"
+vim.opt.guicursor = "i:block-blinkwait100-blinkoff400-blinkon400"
 
 -- Lint info command
 vim.api.nvim_create_user_command("LintInfo", function()

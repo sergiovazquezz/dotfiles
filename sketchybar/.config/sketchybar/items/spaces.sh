@@ -1,39 +1,39 @@
 #!/bin/bash
 
-SPACE_ICONS=(":terminal:" ":zen_browser:" "􀬚" "􀉉" "􀫀" ":messages:")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6")
 
 # Create space items that only show numbers
 sid=0
 spaces=()
 for i in "${!SPACE_ICONS[@]}"; do
-  sid=$(($i + 1))
+    sid=$(($i + 1))
 
-  # Check if icon starts with ":" to determine if it's an app font icon
-  if [[ ${SPACE_ICONS[i]} == :* ]]; then
-    icon_font="sketchybar-app-font:Regular:16.0"
-  else
-    icon_font="$FONT:Semibold:15.0"
-  fi
+    # Check if icon starts with ":" to determine if it's an app font icon
+    if [[ ${SPACE_ICONS[i]} == :* ]]; then
+        icon_font="sketchybar-app-font:Regular:16.0"
+    else
+        icon_font="$FONT:Semibold:16.5"
+    fi
 
-  space=(
-    icon=${SPACE_ICONS[i]}
-    icon.padding_right=10
-    icon.padding_left=10
-    icon.highlight_color=$RED
-    icon.font="$icon_font"
-    script="$PLUGIN_DIR/space.sh"
-  )
+    space=(
+        icon=${SPACE_ICONS[i]}
+        icon.padding_right=11
+        icon.padding_left=11
+        icon.highlight_color=$RED
+        icon.font="$icon_font"
+        script="$PLUGIN_DIR/space.sh"
+    )
 
-  sketchybar --add item space.$sid left \
-    --set space.$sid "${space[@]}" \
-    --subscribe space.$sid mouse.clicked
+    sketchybar --add item space.$sid left \
+        --set space.$sid "${space[@]}" \
+        --subscribe space.$sid mouse.clicked
 done
 
 spaces=(
-  background.color=$BOX_BACKGROUND
-  background.corner_radius=6
-  background.drawing=on
+    background.color=$BOX_BACKGROUND
+    background.corner_radius=8
+    background.drawing=on
 )
 
 sketchybar --add bracket spaces '/space\..*/' \
-  --set spaces "${spaces[@]}"
+    --set spaces "${spaces[@]}"

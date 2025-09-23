@@ -21,7 +21,8 @@ return {
         options = {
           -- theme = custom_catppuccin,
           -- component_separators = { left = "╲", right = "╱" },
-          component_separators = "",
+          component_separators = { left = "", right = "" },
+          -- component_separators = "",
           -- section_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           disabled_filetypes = { "alpha", "Outline" },
@@ -30,35 +31,37 @@ return {
           lualine_a = {
             { "mode" }, -- icon = ""
           },
-          lualine_b = {
+          lualine_c = {
             {
               "filetype",
               icon_only = true,
               padding = { left = 1, right = 0 },
+              separator = "",
             },
             {
               LazyVim.lualine.pretty_path(),
               color = { fg = "#E1DEF6" },
+              separator = "",
             },
           },
-          lualine_c = {
+          lualine_b = {
             {
               "branch",
               -- icon = "",
               icon = "",
               -- icon = "󰊤",
             },
-            {
-              "diff",
-              symbols = { added = " ", modified = " ", removed = " " },
-              colored = true,
-            },
           },
           lualine_x = {
             {
               "diagnostics",
               symbols = { error = " ", warn = " ", info = " ", hint = " " },
-              update_in_insert = true,
+              update_in_insert = false,
+            },
+            {
+              "diff",
+              symbols = { added = " ", modified = " ", removed = " " },
+              colored = true,
             },
           },
           lualine_y = { "progress" },

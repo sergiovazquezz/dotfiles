@@ -14,43 +14,42 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/d
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=39
-  color=$BAR_COLOR
-  shadow=on
-  position=top
-  sticky=on
-  padding_right=10
-  padding_left=10
-  # corner_radius=9
-  # y_offset=10
-  margin=8
-  # blur_radius=20
-  notch_width=0
+    height=34
+    color=$BAR_COLOR
+    shadow=on
+    position=top
+    sticky=on
+    padding_right=5
+    padding_left=5
+    # y_offset=-5
+    margin=8
+    # blur_radius=20
+    notch_width=0
 )
 
 sketchybar --bar "${bar[@]}"
 
 # Setting up default values
 defaults=(
-  updates=when_shown
-  icon.font="$FONT:Bold:14.0"
-  icon.color=$ICON_COLOR
-  icon.padding_left=$PADDINGS
-  icon.padding_right=$PADDINGS
-  label.font="$FONT:Semibold:13.0"
-  label.color=$LABEL_COLOR
-  label.padding_left=$PADDINGS
-  label.padding_right=$PADDINGS
-  padding_right=$PADDINGS
-  padding_left=$PADDINGS
-  background.height=30
-  background.corner_radius=9
-  popup.background.border_width=1
-  popup.background.corner_radius=9
-  popup.background.border_color=$POPUP_BORDER_COLOR
-  popup.background.color=$POPUP_BACKGROUND_COLOR
-  popup.blur_radius=20
-  popup.background.shadow.drawing=on
+    updates=when_shown
+    icon.font="$FONT:Bold:14.0"
+    icon.color=$ICON_COLOR
+    icon.padding_left=$PADDINGS
+    icon.padding_right=$PADDINGS
+    label.font="$FONT:Semibold:13.0"
+    label.color=$LABEL_COLOR
+    label.padding_left=$PADDINGS
+    label.padding_right=$PADDINGS
+    padding_right=$PADDINGS
+    padding_left=$PADDINGS
+    background.height=29
+    background.corner_radius=8
+    popup.background.border_width=1
+    popup.background.corner_radius=8
+    popup.background.border_color=$POPUP_BORDER_COLOR
+    popup.background.color=$POPUP_BACKGROUND_COLOR
+    popup.blur_radius=20
+    popup.background.shadow.drawing=on
 )
 
 sketchybar --default "${defaults[@]}"
@@ -68,11 +67,11 @@ source "$ITEM_DIR/calendar.sh"
 
 # Separator 1 (between calendar and system)
 sketchybar --add item separator1 right \
-  --set separator1 \
-  padding_left=2 \
-  padding_right=2 \
-  background.drawing=off \
-  icon.drawing=off
+    --set separator1 \
+    padding_left=2 \
+    padding_right=2 \
+    background.drawing=off \
+    icon.drawing=off
 
 # System status items (middle group)
 source "$ITEM_DIR/battery.sh"
@@ -82,11 +81,11 @@ source "$ITEM_DIR/volume.sh"
 
 # Separator 2 (between system and performance)
 sketchybar --add item separator2 right \
-  --set separator2 \
-  padding_left=2 \
-  padding_right=2 \
-  background.drawing=off \
-  icon.drawing=off
+    --set separator2 \
+    padding_left=2 \
+    padding_right=2 \
+    background.drawing=off \
+    icon.drawing=off
 
 # Performance items (leftmost visually, so add last)
 source "$ITEM_DIR/ram.sh"
@@ -94,22 +93,22 @@ source "$ITEM_DIR/cpu.sh"
 
 # Create brackets for visual grouping
 sketchybar --add bracket calendar_box calendar \
-   --set calendar_box background.color=$BOX_BACKGROUND \
-   background.corner_radius=6 \
-   background.drawing=on \
-   background.height=30
+    --set calendar_box background.color=$BOX_BACKGROUND \
+    background.corner_radius=8 \
+    background.drawing=on \
+    background.height=29
 
 sketchybar --add bracket system_box battery wifi dnd volume_icon \
-   --set system_box background.color=$BOX_BACKGROUND \
-   background.corner_radius=6 \
-   background.drawing=on \
-   background.height=30
+    --set system_box background.color=$BOX_BACKGROUND \
+    background.corner_radius=8 \
+    background.drawing=on \
+    background.height=29
 
 sketchybar --add bracket performance_box ram cpu \
-   --set performance_box background.color=$BOX_BACKGROUND \
-   background.corner_radius=6 \
-   background.drawing=on \
-   background.height=30
+    --set performance_box background.color=$BOX_BACKGROUND \
+    background.corner_radius=8 \
+    background.drawing=on \
+    background.height=29
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
