@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SPACE_ICONS=("1" "2" "3" "4" "5" "6")
+SPACE_FONT="JetBrainsMono Nerd Font"
 
 # Create space items that only show numbers
 sid=0
@@ -12,13 +13,13 @@ for i in "${!SPACE_ICONS[@]}"; do
     if [[ ${SPACE_ICONS[i]} == :* ]]; then
         icon_font="sketchybar-app-font:Regular:16.0"
     else
-        icon_font="$FONT:Semibold:16.5"
+        icon_font="$SPACE_FONT:Semibold:16.5"
     fi
 
     space=(
         icon=${SPACE_ICONS[i]}
-        icon.padding_right=11
-        icon.padding_left=11
+        icon.padding_right=10
+        icon.padding_left=10
         icon.highlight_color=$RED
         icon.font="$icon_font"
         script="$PLUGIN_DIR/space.sh"

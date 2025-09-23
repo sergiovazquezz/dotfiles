@@ -18,5 +18,4 @@ vim.keymap.set("n", "x", '"_x')
 vim.keymap.set({ "n", "v", "o" }, "m", "<Nop>", { noremap = true, silent = true })
 
 -- Center current buffer
--- vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
-vim.keymap.set("n", "<leader>z", ":NoNeckPain<CR>", { desc = "Toggle No Neck Pain" })
+vim.keymap.set("n", "<leader>z", ":NoNeckPain<CR>", { desc = "Toggle No Neck Pain", silent = true })
