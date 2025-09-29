@@ -3,12 +3,10 @@
 options=(
     style=round
     width=6.0
-    hidpi=on
-    # active_color="gradient(top_left=0xffc6a0f6,bottom_right=0xff8aadf4)"
-    # inactive_color="gradient(top_left=0xff7dc4e4,bottom_right=0xffb7bdf8)"
-    active_color=0xc0e2e2e3
+    hidpi=off
+    active_color=0xFFC4A7E7
+    # active_color=0xff8CABC8 # Blue
     inactive_color=0xc02c2e34
-    order=below
 )
 
 borders "${options[@]}"

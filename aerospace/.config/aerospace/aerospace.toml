@@ -20,11 +20,6 @@ default-root-container-layout = 'tiles'
 #               tall monitor (anything higher than wide) gets vertical orientation
 default-root-container-orientation = 'auto'
 
-# Mouse follows focus when focused monitor changes
-# Drop it from your config, if you don't like this behavior
-# See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
-# See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-# Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = true
@@ -32,7 +27,7 @@ automatically-unhide-macos-hidden-apps = true
 exec-on-workspace-change = [
     '/bin/bash',
     '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE && ~/.config/sketchybar/plugins/update_workspace_icons.sh',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 [key-mapping]
@@ -41,31 +36,17 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
 inner.vertical = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
-outer.left = [{ monitor.built-in = 3 }, { monitor.main = 59 }, 55]
-outer.right = [{ monitor.built-in = 3 }, { monitor.main = 59 }, 55]
-outer.top = [{ monitor.built-in = 6 }, { monitor.main = 60 }, 55]
-outer.bottom = [{ monitor.built-in = 2 }, { monitor.main = 50 }, 55]
+outer.left = [{ monitor.built-in = 6 }, { monitor.main = 59 }, 55]
+outer.right = [{ monitor.built-in = 6 }, { monitor.main = 59 }, 55]
+outer.top = [{ monitor.built-in = 12 }, { monitor.main = 60 }, 55]
+outer.bottom = [{ monitor.built-in = 6 }, { monitor.main = 50 }, 55]
 
 [mode.main.binding]
-
-# All possible keys:
-# - Letters.        a, b, c, ..., z
-# - Numbers.        0, 1, 2, ..., 9
-# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
-# - F-keys.         f1, f2, ..., f20
-# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
-#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
-# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
-#                   keypadMinus, keypadMultiply, keypadPlus
-# - Arrows.         left, down, up, right
-
-# All possible modifiers: cmd, alt, ctrl, shift
-# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
-
-# App shortcuts
-ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Zen.app'
-ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+# ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Zen.app'
 # ctrl-alt-cmd-g = '''exec-and-forget open -a /Applications/Brave\ Browser.app'''
+ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Chromium.app'
+# ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Helium.app'
+ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
 ctrl-alt-cmd-d = 'exec-and-forget open -a /Applications/Discord.app'
 ctrl-alt-cmd-m = 'exec-and-forget open -a Mail'
 ctrl-alt-cmd-r = 'exec-and-forget open -a Reminders'
@@ -154,9 +135,17 @@ run = ['layout floating']
 if.app-id = 'com.mitchellh.ghostty'
 run = ['move-node-to-workspace 1']
 
+# [[on-window-detected]]
+# if.app-id = 'app.zen-browser.zen'
+# run = ['move-node-to-workspace 2']
+
 [[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
+if.app-id = 'org.chromium.Chromium'
 run = ['move-node-to-workspace 2']
+
+# [[on-window-detected]]
+# if.app-id = 'net.imput.helium'
+# run = ['move-node-to-workspace 2']
 
 # [[on-window-detected]]
 # if.app-id = 'com.brave.Browser'
