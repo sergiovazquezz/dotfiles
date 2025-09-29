@@ -42,4 +42,4 @@ DND_OFF=􀆹
 # System components
 CPU=􀧓
 RAM=􀫦
-RAM2=
+RAMM=

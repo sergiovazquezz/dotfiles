@@ -2,7 +2,7 @@
 
 # Color Palette
 export BLACK=0xff181926
-export WHITE=0xFFFFFFFF
+export WHITE=0xffffffff
 export RED=0xffed8796
 export GREEN=0xffa6da95
 export BLUE=0xff8aadf4
@@ -13,15 +13,7 @@ export GREY=0xff939ab7
 export AQUA=0xffcad3f5
 export TRANSPARENT=0x00000000
 
-# General bar colors
-export BAR_COLOR=$TRANSPARENT
-export ICON_COLOR=$AQUA  # Color of all icons
-export LABEL_COLOR=$AQUA # Color of all labels
-export BACKGROUND_1=0x903c3e4f
-export BACKGROUND_2=0x90494d64
-
-# Box backgrounds for grouping items
-export BOX_BACKGROUND=$BLACK
-export BOX_BACKGROUND_OLD=0xB32F2A51
-
-export SHADOW_COLOR=$BLACK
+export BAR_COLOR=0x40000000
+export ICON_COLOR=$WHITE
+export LABEL_COLOR=$WHITE
+export ITEM_BG_COLOR=0x33000000
