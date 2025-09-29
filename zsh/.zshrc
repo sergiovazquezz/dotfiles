@@ -71,6 +71,7 @@ alias drizzle-studio-bun='bun drizzle-kit studio --verbose'
 alias prettier-write-bun='bunx prettier . --write'
 alias vim='nvim'
 alias cd='z'
+alias lg='lazygit'
 
 # ~/bin
 export PATH="$HOME/bin:$PATH"
