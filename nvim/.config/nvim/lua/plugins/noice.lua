@@ -4,11 +4,11 @@ return {
     opts = {
       cmdline = {
         enabled = true, -- Keep noice cmdline enabled
-        -- view = "cmdline", -- Use bottom cmdline view (like default Neovim)
+        view = "cmdline", -- Use bottom cmdline view (like default Neovim)
       },
       presets = {
-        command_palette = true,
-        bottom_search = false,
+        -- command_palette = true,
+        -- bottom_search = false,
       },
       lsp = {
         signature = {

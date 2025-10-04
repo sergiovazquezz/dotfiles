@@ -45,13 +45,13 @@ nvm alias default 'lts/*' > /dev/null 2>&1
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Fzf Rose Pine
-export FZF_DEFAULT_OPTS="
-  --color=fg:#908caa,bg:#191724,hl:#ebbcba
-  --color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-  --color=border:#403d52,header:#31748f,gutter:#191724
-  --color=spinner:#f6c177,info:#9ccfd8
-  --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+# # Fzf Rose Pine
+# export FZF_DEFAULT_OPTS="
+#   --color=fg:#908caa,bg:#191724,hl:#ebbcba
+#   --color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
+#   --color=border:#403d52,header:#31748f,gutter:#191724
+#   --color=spinner:#f6c177,info:#9ccfd8
+#   --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 
 # Fzf Rose Pine Moon
 # export FZF_DEFAULT_OPTS="
@@ -72,6 +72,3 @@ alias prettier-write-bun='bunx prettier . --write'
 alias vim='nvim'
 alias cd='z'
 alias lg='lazygit'
-
-# ~/bin
-export PATH="$HOME/bin:$PATH"

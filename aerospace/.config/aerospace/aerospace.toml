@@ -25,9 +25,9 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = true
 
 exec-on-workspace-change = [
-    '/bin/bash',
-    '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+  '/bin/bash',
+  '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 [key-mapping]
@@ -46,7 +46,8 @@ outer.bottom = [{ monitor.built-in = 6 }, { monitor.main = 50 }, 55]
 # ctrl-alt-cmd-g = '''exec-and-forget open -a /Applications/Brave\ Browser.app'''
 ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Chromium.app'
 # ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Helium.app'
-ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+# ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/kitty.app/'
 ctrl-alt-cmd-d = 'exec-and-forget open -a /Applications/Discord.app'
 ctrl-alt-cmd-m = 'exec-and-forget open -a Mail'
 ctrl-alt-cmd-r = 'exec-and-forget open -a Reminders'
@@ -133,6 +134,10 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
 run = ['move-node-to-workspace 1']
 
 # [[on-window-detected]]

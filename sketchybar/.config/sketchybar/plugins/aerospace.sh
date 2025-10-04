@@ -1,7 +1,9 @@
 #!/bin/bash
 
+source "$HOME/.config/sketchybar/colors.sh"
+
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-    sketchybar --set $NAME background.drawing=on
+    sketchybar --set $NAME icon.color=$TEST
 else
-    sketchybar --set $NAME background.drawing=off
+    sketchybar --set $NAME icon.color=$ICON_COLOR
 fi

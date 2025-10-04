@@ -4,26 +4,9 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     config = function()
-      local custom_catppuccin = require("lualine.themes.catppuccin")
-
-      -- Custom colours
-      custom_catppuccin.normal.b.fg = "#cad3f5"
-      custom_catppuccin.insert.b.fg = "#cad3f5"
-      custom_catppuccin.visual.b.fg = "#cad3f5"
-      custom_catppuccin.replace.b.fg = "#cad3f5"
-      custom_catppuccin.command.b.fg = "#cad3f5"
-      custom_catppuccin.inactive.b.fg = "#cad3f5"
-
-      custom_catppuccin.normal.c.fg = "#6e738d"
-      -- custom_catppuccin.normal.c.bg = "NONE"
-
       require("lualine").setup({
         options = {
-          -- theme = custom_catppuccin,
-          -- component_separators = { left = "╲", right = "╱" },
           component_separators = { left = "", right = "" },
-          -- component_separators = "",
-          -- section_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           disabled_filetypes = { "alpha", "Outline" },
         },

@@ -16,7 +16,7 @@ return {
         prettierd = {
           prepend_args = {
             "--config-precedence=prefer-file",
-            "--tab-width=2",
+            "--tab-width=4",
             "--use-tabs=false",
             "--single-quote=true",
             "--jsx-single-quote=true",

@@ -8,10 +8,11 @@
 -- vim.opt.ttimeoutlen = 100
 
 -- Set tab to 4 spaces
-vim.opt.tabstop = 4 -- Display tabs as 2 spaces wide
-vim.opt.shiftwidth = 4 -- Use 2 spaces for indentation
-vim.opt.softtabstop = 4 -- Insert 2 spaces when pressing Tab
-vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.list = false
 
 vim.opt.hlsearch = false -- Highlight search results
 vim.opt.scrolloff = 18

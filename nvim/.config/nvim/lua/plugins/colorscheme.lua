@@ -76,7 +76,7 @@ return {
     opts = {
       flavour = "mocha",
       transparent_background = true,
-      -- no_bold = true,
+      no_bold = true,
       styles = {
         comments = { "italic" },
         keywords = {},
@@ -85,13 +85,14 @@ return {
         loops = {},
         strings = {},
         variables = {},
-        properties = { "italic" },
+        properties = {},
         operators = {},
         functions = {},
       },
       integrations = {
         aerial = true,
         alpha = true,
+        bufferline = true,
         cmp = true,
         dashboard = true,
         flash = true,
@@ -128,17 +129,6 @@ return {
         which_key = true,
       },
     },
-    specs = {
-      {
-        "akinsho/bufferline.nvim",
-        optional = true,
-        opts = function(_, opts)
-          if (vim.g.colors_name or ""):find("catppuccin") then
-            opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
-          end
-        end,
-      },
-    },
   },
 
   {
@@ -150,22 +140,14 @@ return {
         variant = "main", -- auto, main, moon, or dawn
         dark_variant = "main", -- main, moon, or dawn
         dim_inactive_windows = false,
-        -- disable_background = true,
-        -- disable_nc_background = false,
-        -- disable_float_background = false,
-        -- extend_background_behind_borders = false,
+        disable_background = true,
+        disable_nc_background = true,
+        disable_float_background = true,
+        extend_background_behind_borders = false,
         styles = {
           bold = false,
           italic = false,
-          transparency = true,
-        },
-        highlight_groups = {
-          ColorColumn = { bg = "#1C1C21" },
-          Normal = { bg = "none" }, -- Main background remains transparent
-          Pmenu = { bg = "", fg = "#e0def4" }, -- Completion menu background
-          PmenuSel = { bg = "#4a465d", fg = "#f8f5f2" }, -- Highlighted completion item
-          PmenuSbar = { bg = "#191724" }, -- Scrollbar background
-          PmenuThumb = { bg = "#9ccfd8" }, -- Scrollbar thumb
+          transparency = false,
         },
         enable = {
           terminal = false,
@@ -183,6 +165,17 @@ return {
     name = "sonokai",
     config = function()
       vim.g.sonokai_enable_italic = true
+    end,
+  },
+
+  {
+    "mellow-theme/mellow.nvim",
+    lazy = false,
+    priority = 1000,
+    name = "mellow",
+    config = function()
+      vim.g.mellow_italic_keywords = false
+      vim.g.mellow_transparent = true
     end,
   },
 }
