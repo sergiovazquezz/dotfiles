@@ -1,0 +1,62 @@
+return {
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {
+            flavour = "mocha",
+            transparent_background = true,
+            float = {
+                transparent = true,
+                solid = false,
+            },
+            term_colors = true,
+            no_italic = false,
+            no_bold = true,
+            no_underline = false,
+            styles = {
+                comments = { "italic" },
+                conditionals = {},
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
+                operators = {},
+            },
+            lsp_styles = {
+                virtual_text = {
+                    errors = { "italic" },
+                    hints = { "italic" },
+                    warnings = { "italic" },
+                    information = { "italic" },
+                    ok = { "italic" },
+                },
+                underlines = {
+                    errors = { "underline" },
+                    hints = { "underline" },
+                    warnings = { "underline" },
+                    information = { "underline" },
+                    ok = { "underline" },
+                },
+                inlay_hints = {
+                    background = true,
+                },
+            },
+            integrations = {
+                flash = true,
+                gitsigns = true,
+                mini = { enabled = true },
+                noice = true,
+                render_markdown = true,
+                snacks = { enabled = true },
+                lsp_trouble = true,
+                which_key = true,
+            },
+        },
+    },
+}

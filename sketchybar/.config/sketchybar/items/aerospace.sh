@@ -8,7 +8,7 @@ for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
     --subscribe space.$sid aerospace_workspace_change \
     --set space.$sid \
-    icon.font="$FONT:Semibold:16" \
+    icon.font="$FONT5:Retina:17" \
     label.drawing=off \
     padding_left=0 \
     padding_right=0 \

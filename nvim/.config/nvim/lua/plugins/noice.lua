@@ -1,27 +1,38 @@
 return {
-  { -- Disable remaining documentation and restore command line
-    "folke/noice.nvim",
-    opts = {
-      cmdline = {
-        enabled = true, -- Keep noice cmdline enabled
-        view = "cmdline", -- Use bottom cmdline view (like default Neovim)
-      },
-      presets = {
-        -- command_palette = true,
-        -- bottom_search = false,
-      },
-      lsp = {
-        signature = {
-          enabled = true,
-          auto_open = false, -- Don't auto-open signature help
+    {
+        "folke/noice.nvim",
+        opts = {
+            lsp = {
+                override = {
+                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                    ["vim.lsp.util.stylize_markdown"] = true,
+                    ["cmp.entry.get_documentation"] = true,
+                },
+            },
+            routes = {
+                {
+                    filter = {
+                        event = "msg_show",
+                        any = {
+                            { find = "%d+L, %d+B" },
+                            { find = "; after #%d+" },
+                            { find = "; before #%d+" },
+                        },
+                    },
+                    view = "mini",
+                },
+            },
+            presets = {
+                bottom_search = true,
+                command_palette = false,
+                long_message_to_split = true,
+                lsp_doc_border = true,
+            },
+            cmdline = {
+                enabled = true, -- Keep noice cmdline enabled
+                view = "cmdline", -- Use bottom cmdline view (like default Neovim)
+                format = { cmdline = { icon = " :" } },
+            },
         },
-        hover = {
-          enabled = false, -- Disable hover documentation
-        },
-        progress = {
-          enabled = false, -- Disable LSP progress messages
-        },
-      },
     },
-  },
 }

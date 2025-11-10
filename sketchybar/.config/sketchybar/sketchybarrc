@@ -8,7 +8,9 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin s
 
 FONT="CaskaydiaCove Nerd Font"
 FONT2="JetBrainsMono Nerd Font"
-FONT2="IBM Plex Sans"
+FONT3="IBM Plex Sans"
+FONT4="SF Pro Display"
+FONT5="FiraCode Nerd Font"
 
 # Unload the macOS on screen indicator overlay for volume change
 launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
@@ -32,26 +34,27 @@ defaults=(
     updates=when_shown
     padding_right=4
     padding_left=4
-    icon.font="$FONT:Regular:14"
+    icon.font="$FONT5:Regular:15"
     icon.color=$ICON_COLOR
     icon.padding_right=5
     icon.padding_left=5
-    label.font="$FONT:Regular:12.5"
+    icon.y_offset=0
+    label.font="$FONT5:Retina:13.5"
     label.color=$LABEL_COLOR
+    label.padding_right=5
+    label.padding_left=0
+    label.y_offset=0
     background.height=25
     background.corner_radius=6
 )
 
 sketchybar --default "${defaults[@]}"
 
-# Left
 # source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/aerospace.sh"
 
-# Right
 source "$ITEM_DIR/calendar.sh"
 
-# System status items (middle group)
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/volume.sh"
@@ -59,5 +62,3 @@ source "$ITEM_DIR/dnd.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
-
-echo "sketchybar configuation loaded.."

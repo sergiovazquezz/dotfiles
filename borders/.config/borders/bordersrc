@@ -5,7 +5,9 @@ options=(
     width=6.0
     hidpi=off
     # active_color=0xFFC4A7E7
-    active_color=0xEE33CCFF # Blue
+    # active_color=0xEE33CCFF # Blue
+    # active_color=0xffcba6f7 # Purple
+    active_color=0xff89b4fa # Other blue
     inactive_color=0xc02c2e34
 )
 

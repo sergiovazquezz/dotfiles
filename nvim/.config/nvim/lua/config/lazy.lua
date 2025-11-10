@@ -1,53 +1,104 @@
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "--branch=stable",
+        lazyrepo,
+        lazypath,
+    })
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out, "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+    end
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  spec = {
-    -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import/override with your plugins
-    { import = "plugins" },
-  },
-  defaults = {
-    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
-    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
-    lazy = false,
-    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-    -- have outdated releases, which may break your Neovim install.
-    version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
-  },
-  install = { colorscheme = { "catppuccin", "habamax" } },
-  checker = {
-    enabled = true, -- check for plugin updates periodically
-    notify = false, -- notify on update
-  }, -- automatically check for plugin updates
-  performance = {
-    rtp = {
-      -- disable some rtp plugins
-      disabled_plugins = {
-        "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-      },
-    },
-  },
+-------------------------------------------------------------------------
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+vim.opt.clipboard = "unnamedplus"
+
+-- Set tab to 4 spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.list = false
+vim.opt.smartindent = true
+
+vim.opt.hlsearch = false -- Highlight search results
+vim.opt.scrolloff = 18
+vim.opt.ignorecase = true -- Make commands case insensitive
+vim.opt.backspace = { "start", "eol", "indent" }
+
+-- Line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- Disable window borders
+vim.opt.fillchars = {
+    eob = " ",
+    vert = " ",
+}
+
+-- Exit insert with jj
+vim.keymap.set("i", "jj", "<Esc>")
+
+-- Don't save with x
+vim.keymap.set("n", "x", '"_x')
+
+-- UI
+vim.keymap.set("n", "<leader>uc", ":NoNeckPain<CR>", { desc = "Zen Mode", silent = true })
+
+-- Buffer navigation
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer", silent = true })
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer", silent = true })
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close buffer", silent = true })
+
+-- Window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window", silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window", silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window", silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window", silent = true })
+
+-- Undo
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+-- Search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.api.nvim_create_autocmd("VimLeave", {
+    callback = function()
+        vim.fn.system("prettierd stop")
+    end,
 })
+
+-------------------------------------------------------------------------
+
+require("lazy").setup({
+    spec = {
+        { import = "plugins" },
+    },
+    install = { colorscheme = { "habamax" } },
+    checker = { enabled = false },
+})
+
+-- vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme rose-pine")

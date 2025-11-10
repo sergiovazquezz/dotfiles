@@ -1,9 +1,7 @@
 # DotFiles ⚙️
 
-## Configs included
-
-- Ghostty
-- NeoVim (Modified LazyVim)
+- Kitty and Ghostty
+- NeoVim
 - Starship
 - Aerospace
 - SketchyBar

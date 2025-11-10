@@ -1,67 +1,53 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-palette = "rosepine"
+# palette = "catppuccin_mocha"
 
 # Wait 10ms to check files under the current directory
 scan_timeout = 10
 
-# Inserts a blank line between shell prompts
 add_newline = false
 
-# Prompt with no lang versions
-format = """$character$directory$git_branch$git_status[✗](bold yellow) """
+# [palettes.catppuccin_mocha]
+# rosewater = "#f5e0dc"
+# flamingo = "#f2cdcd"
+# pink = "#f5c2e7"
+# mauve = "#cba6f7"
+# red = "#f38ba8"
+# maroon = "#eba0ac"
+# peach = "#fab387"
+# yellow = "#f9e2af"
+# green = "#a6e3a1"
+# teal = "#94e2d5"
+# sky = "#89dceb"
+# sapphire = "#74c7ec"
+# blue = "#89b4fa"
+# lavender = "#b4befe"
+# text = "#cdd6f4"
+# subtext1 = "#bac2de"
+# subtext0 = "#a6adc8"
+# overlay2 = "#9399b2"
+# overlay1 = "#7f849c"
+# overlay0 = "#6c7086"
+# surface2 = "#585b70"
+# surface1 = "#45475a"
+# surface0 = "#313244"
+# base = "#1e1e2e"
+# mantle = "#181825"
+# crust = "#11111b"
 
-# Prompt with lang versions
-# format = """$character$directory$git_branch$git_status$c$cpp$elixir$elm$golang$java$python$ruby$rust$nodejs$bun$docker_context$package$localip[✗](bold red) """
-
-[palettes.rosepine]
-green = "#a6e3a1"
-red = "#eb6f92"
-mauve = "#c4a7e7"
-pink = "#f5c2e7"
-blue_test = "#9ccfd8"
-blue = "#89b4fa"
-yellow = "#f6c177"
-rose = "#ebbcba"
-
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
-
-# Make prompt single line
 [line_break]
 disabled = true
 
 [character]
 success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
-vimcmd_symbol = '[➜](bold yellow)'
+# success_symbol = '[❯](bold green)'
+# error_symbol = '[❯](bold red)'
+# success_symbol = "[\\$](green)"
+# error_symbol = "[\\$](red)"
 
 [package]
+disabled = true
 symbol = "󰏗 "
 
 [localip]
@@ -69,49 +55,31 @@ disabled = true
 ssh_only = false
 format = '󰩟 [$localipv4](bold red) '
 
-[sudo]
-#style = "bold green"
-#symbol = "💻 "
-#disabled = false
-
 [username]
 disabled = true
-#style_user = "green bold"
-#style_root = "red bold"
-#format = "[$user]($style) "
-#show_always = true
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+show_always = true
 
 [hostname]
 disabled = true
-#ssh_only = false
-#format = 'on [$hostname](bold yellow) '
-#trim_at = "."
+ssh_only = false
+format = 'on [$hostname](bold yellow) '
+trim_at = "."
 
 [directory]
 read_only = " 󰯄"
 truncation_length = 4
 truncate_to_repo = true
-style = "bold blue"
-
-# Substitute directory names with icons
-# [directory.substitutions]
-# 'Documents' = '󰈙'
-# 'Downloads' = ' '
-# 'Music' = ' '
-# 'Pictures' = ' '
+style = "blue"
 
 [cmd_duration]
 disabled = true
-#min_time = 4
-#show_milliseconds = false
-#style = "bold italic red"
+min_time = 4
+show_milliseconds = false
+style = "bold italic red"
 
-[git_status]
-ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}"
-style = "bold pink"
-format = "[$all_status$ahead_behind]($style)[\\)](bold mauve) "
 
 [aws]
 symbol = " "
@@ -124,7 +92,7 @@ symbol = " "
 
 [docker_context]
 symbol = " "
-format = "  [$symbol$context]($style) "
+format = "[$symbol$context]($style) "
 style = "bold blue"
 only_with_files = true
 detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
@@ -132,42 +100,45 @@ detect_folders = []
 disabled = false
 
 [c]
-# symbol = " "
+symbol = ""
 commands = [['gcc-15', '--version']]
-format = "[gcc:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+format = "via [$symbol](bold yellow) [$version](yellow) "
 
 [cpp]
-disabled = false
+symbol = ""
 commands = [['g++-15', '--version']]
-format = "[g++:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
-# detect_extensions = ["cpp", "cxx", "cc", "c++", "hpp", "hxx", "h++", "hh"]
+format = "via [$symbol](yellow) [$version](yellow) "
 
 [elixir]
-# symbol = " "
-format = "[elixir:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+symbol = " "
 
 [elm]
-# symbol = " "
-format = "[elm:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+symbol = " "
 
 [git_branch]
-# symbol = " 󰘬 "
-style = "bold pink"
-format = "[git:\\(](bold mauve)[$branch]($style)"
+symbol = "󰘬 "
+format = "on [$symbol](bold purple)[$branch(:$remote_branch)](purple) "
+
+[git_metrics]
+disabled = true
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
 
 [golang]
-# symbol = " "
-format = "[golang:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+symbol = ""
+format = "via [$symbol](bold yellow) [$version](yellow) "
 
 [hg_branch]
 symbol = "󰘬 "
 
 [java]
-# symbol = " "
-format = "[java:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+symbol = " "
+style = "yellow"
 
 [julia]
 symbol = " "
+style = "yellow"
 
 [memory_usage]
 symbol = "󰍛 "
@@ -185,21 +156,21 @@ symbol = " "
 symbol = " "
 
 [python]
-# symbol = " "
-#pyenv_version_name = true
-format = "[py:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+symbol = " "
+style = "yellow"
+pyenv_version_name = false
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
 version_format = "v${raw}"
+format = "via [$symbol](bold yellow)[$version]($style)[(\\($virtualenv\\))]($style) "
 
 [ruby]
 symbol = " "
-format = "[ruby:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
 
 [rust]
 symbol = " "
-format = "[rust:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+format = "via [$symbol](bold yellow)[$version](yellow) "
 
 [scala]
 symbol = " "
@@ -211,9 +182,7 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-format = "[node:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "
+symbol = " "
+format = "via [$symbol](bold yellow)[$version](yellow) "
 detect_files = ["package.json", ".node-version", "yarn.lock", "pnpm-lock.yaml"]
 detect_folders = ["node_modules"]
-
-[bun]
-format = "[bun:\\(](bold #91d7e3)[$version](bold #f0c6c6)[\\)](bold #91d7e3) "

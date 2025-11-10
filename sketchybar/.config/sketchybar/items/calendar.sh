@@ -1,7 +1,7 @@
 #!/bin/bash
 
 calendar=(
-    icon.font="$FONT:Regular:13.4"
+    icon.y_offset=-1
     padding_left=10
     icon.padding_right=0
     padding_right=0
