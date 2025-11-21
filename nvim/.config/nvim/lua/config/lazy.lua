@@ -84,6 +84,10 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
+-- Lang
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us", "es" }
+
 vim.api.nvim_create_autocmd("VimLeave", {
     callback = function()
         vim.fn.system("prettierd stop")

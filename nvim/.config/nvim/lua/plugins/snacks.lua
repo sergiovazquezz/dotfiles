@@ -101,21 +101,6 @@ return {
             end,
             desc = "Git Status",
         },
-        -- Search
-        -- {
-        --     "<leader>sc",
-        --     function()
-        --         Snacks.picker.commands()
-        --     end,
-        --     desc = "Commands",
-        -- },
-        -- {
-        --     "<leader>sC",
-        --     function()
-        --         Snacks.picker.command_history()
-        --     end,
-        --     desc = "Command History",
-        -- },
         {
             "<leader>sd",
             function()
@@ -123,48 +108,20 @@ return {
             end,
             desc = "Diagnostics",
         },
-        -- {
-        --     "<leader>sh",
-        --     function()
-        --         Snacks.picker.help()
-        --     end,
-        --     desc = "Help Pages",
-        -- },
-        -- {
-        --     "<leader>sH",
-        --     function()
-        --         Snacks.picker.highlights()
-        --     end,
-        --     desc = "Highlights",
-        -- },
-        -- {
-        --     "<leader>sk",
-        --     function()
-        --         Snacks.picker.keymaps()
-        --     end,
-        --     desc = "Keymaps",
-        -- },
-        -- {
-        --     "<leader>sl",
-        --     function()
-        --         Snacks.picker.loclist()
-        --     end,
-        --     desc = "Location List",
-        -- },
-        -- {
-        --     "<leader>sM",
-        --     function()
-        --         Snacks.picker.man()
-        --     end,
-        --     desc = "Man Pages",
-        -- },
-        -- {
-        --     "<leader>sm",
-        --     function()
-        --         Snacks.picker.marks()
-        --     end,
-        --     desc = "Marks",
-        -- },
+        {
+            "<leader>sM",
+            function()
+                Snacks.picker.man()
+            end,
+            desc = "Man Pages",
+        },
+        {
+            "<leader>st",
+            function()
+                Snacks.picker.todo_comments()
+            end,
+            desc = "Todo",
+        },
         {
             "<leader>sq",
             function()
