@@ -21,18 +21,18 @@ volume_change() {
   *) ICON=$VOLUME_100 ;;
   esac
 
-  audio_device="$(SwitchAudioSource -c)"
+  # audio_device="$(SwitchAudioSource -c)"
+  #
+  # # Override with AirPods icons if connected (but only if not muted)
+  # if [[ $INFO != 0 ]]; then
+  #   if [[ "$audio_device" == *"AirPods Max"* ]]; then
+  #     ICON=$AIRPODS_MAX
+  #   elif [[ "$audio_device" == *"AirPods Pro"* ]]; then
+  #     ICON=$AIRPODS_PRO
+  #   fi
+  # fi
 
-  # Override with AirPods icons if connected (but only if not muted)
-  if [[ $INFO != 0 ]]; then
-    if [[ "$audio_device" == *"AirPods Max"* ]]; then
-      ICON=$AIRPODS_MAX
-    elif [[ "$audio_device" == *"AirPods Pro"* ]]; then
-      ICON=$AIRPODS_PRO
-    fi
-  fi
-
-  sketchybar --set volume_icon icon=$ICON
+  sketchybar --set volume_icon icon=$ICON label="$INFO%"
 }
 
 case "$SENDER" in

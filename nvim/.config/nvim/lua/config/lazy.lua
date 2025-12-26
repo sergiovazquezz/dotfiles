@@ -84,6 +84,9 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
+-- Cursor
+vim.opt.guicursor = "n-v-c-i:block"
+
 -- Lang
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "es" }
@@ -104,5 +107,4 @@ require("lazy").setup({
     checker = { enabled = false },
 })
 
--- vim.cmd("colorscheme catppuccin")
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme tokyonight")

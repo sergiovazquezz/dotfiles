@@ -5,7 +5,6 @@ source "$HOME/.config/sketchybar/colors.sh"
 
 # Handle click events
 if [[ "$SENDER" = "mouse.clicked" ]]; then
-    # Use keyboard shortcut to toggle Focus Mode (Cmd+Option+Control+Shift+D)
     osascript -e 'tell application "System Events" to keystroke "d" using {command down, shift down, control down, option down}'
 
     sleep 0.5
@@ -16,10 +15,8 @@ FOCUS_STATUS=$(defaults read com.apple.controlcenter "NSStatusItem Preferred Pos
 
 if [[ "$FOCUS_STATUS" != "0" ]]; then
     ICON=$DND_ON
-    COLOR=$BLUE
 else
     ICON=$DND_OFF
-    COLOR=$WHITE
 fi
 
-sketchybar --set $NAME icon="$ICON" icon.color=$COLOR
+sketchybar --set $NAME icon="$ICON" icon.color=$ICON_COLOR

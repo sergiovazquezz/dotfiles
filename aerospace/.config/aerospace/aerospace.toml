@@ -36,18 +36,18 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
 inner.vertical = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
-outer.left = [{ monitor.built-in = 6 }, { monitor.main = 59 }, 55]
-outer.right = [{ monitor.built-in = 6 }, { monitor.main = 59 }, 55]
+outer.left = [{ monitor.built-in = 5 }, { monitor.main = 59 }, 55]
+outer.right = [{ monitor.built-in = 5 }, { monitor.main = 59 }, 55]
 outer.top = [{ monitor.built-in = 12 }, { monitor.main = 60 }, 55]
 outer.bottom = [{ monitor.built-in = 6 }, { monitor.main = 50 }, 55]
 
 [mode.main.binding]
 # ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Zen.app'
-# ctrl-alt-cmd-g = '''exec-and-forget open -a /Applications/Brave\ Browser.app'''
-ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Chromium.app'
+ctrl-alt-cmd-g = '''exec-and-forget open -a /Applications/Brave\ Browser.app'''
+# ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Chromium.app'
 # ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Helium.app'
-# ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
-ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/kitty.app/'
+ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+# ctrl-alt-cmd-t = 'exec-and-forget open -a /Applications/kitty.app/'
 ctrl-alt-cmd-d = 'exec-and-forget open -a /Applications/Discord.app'
 ctrl-alt-cmd-m = 'exec-and-forget open -a Mail'
 ctrl-alt-cmd-r = 'exec-and-forget open -a Reminders'
@@ -86,7 +86,6 @@ ctrl-alt-cmd-4 = 'workspace 4'
 ctrl-alt-cmd-5 = 'workspace 5'
 ctrl-alt-cmd-6 = 'workspace 6'
 ctrl-alt-cmd-7 = 'workspace 7'
-ctrl-alt-cmd-8 = 'workspace 8'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-alt-cmd-shift-1 = 'move-node-to-workspace 1'
@@ -96,7 +95,6 @@ ctrl-alt-cmd-shift-4 = 'move-node-to-workspace 4'
 ctrl-alt-cmd-shift-5 = 'move-node-to-workspace 5'
 ctrl-alt-cmd-shift-6 = 'move-node-to-workspace 6'
 ctrl-alt-cmd-shift-7 = 'move-node-to-workspace 7'
-ctrl-alt-cmd-shift-8 = 'move-node-to-workspace 8'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 ctrl-alt-cmd-tab = 'workspace-back-and-forth'
@@ -120,21 +118,17 @@ ctrl-alt-cmd-shift-k = ['join-with up', 'mode main']
 ctrl-alt-cmd-shift-l = ['join-with right', 'mode main']
 
 # Default space
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = ['layout floating']
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.LocalAuthentication.UIAgent'
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Passwords'
-run = ['layout floating']
-
-[[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = ['layout floating', 'move-node-to-workspace 1']
+run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
@@ -144,24 +138,16 @@ run = ['move-node-to-workspace 1']
 # if.app-id = 'app.zen-browser.zen'
 # run = ['move-node-to-workspace 2']
 
+# [[on-window-detected]]
+# if.app-id = 'org.chromium.Chromium'
+# run = ['move-node-to-workspace 2']
+
 [[on-window-detected]]
-if.app-id = 'org.chromium.Chromium'
+if.app-id = 'com.brave.Browser'
 run = ['move-node-to-workspace 2']
-
-# [[on-window-detected]]
-# if.app-id = 'net.imput.helium'
-# run = ['move-node-to-workspace 2']
-
-# [[on-window-detected]]
-# if.app-id = 'com.brave.Browser'
-# run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
-run = ['move-node-to-workspace 4']
-
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
 run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
@@ -184,19 +170,9 @@ run = ['move-node-to-workspace 6']
 if.app-id = 'net.whatsapp.WhatsApp'
 run = ['move-node-to-workspace 6']
 
-# Netflix
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.414501BE-67F1-4171-A782-928172DBCB25'
-run = ['move-node-to-workspace 7']
-
-# Prime Video
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.1659AE26-6235-44DB-AA2C-1D0D15618EC6'
-run = ['move-node-to-workspace 7']
-
-# Everything else
-[[on-window-detected]]
-run = 'move-node-to-workspace 3'
+# # Everything else
+# [[on-window-detected]]
+# run = 'move-node-to-workspace 3'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'
@@ -206,4 +182,3 @@ run = 'move-node-to-workspace 3'
 5 = 'main'
 6 = 'main'
 7 = 'secondary'
-8 = 'secondary'

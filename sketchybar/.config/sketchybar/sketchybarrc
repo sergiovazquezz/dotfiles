@@ -9,15 +9,16 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin s
 FONT="CaskaydiaCove Nerd Font"
 FONT2="JetBrainsMono Nerd Font"
 FONT3="IBM Plex Sans"
-FONT4="SF Pro Display"
+FONT4="SF Pro"
 FONT5="FiraCode Nerd Font"
+FONT6="Hack Nerd Font"
 
 # Unload the macOS on screen indicator overlay for volume change
 launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
 
 bar=(
-    height=33
-    color=$BAR_COLOR
+    height=34
+    color=$CAT_BAR
     shadow=off
     position=top
     sticky=on
@@ -32,33 +33,26 @@ sketchybar --bar "${bar[@]}"
 # Setting up default values
 defaults=(
     updates=when_shown
-    padding_right=4
-    padding_left=4
-    icon.font="$FONT5:Regular:15"
+    padding_right=5
+    padding_left=5
+    icon.font="$FONT6:Bold:16"
     icon.color=$ICON_COLOR
-    icon.padding_right=5
-    icon.padding_left=5
-    icon.y_offset=0
-    label.font="$FONT5:Retina:13.5"
+    icon.padding_right=4
+    icon.padding_left=4
+    label.font="$FONT6:Bold:12.5"
     label.color=$LABEL_COLOR
-    label.padding_right=5
-    label.padding_left=0
-    label.y_offset=0
-    background.height=25
-    background.corner_radius=6
+    background.drawing=off
 )
 
 sketchybar --default "${defaults[@]}"
 
 # source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/aerospace.sh"
-
 source "$ITEM_DIR/calendar.sh"
-
 source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/wifi.sh"
-source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/dnd.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/wifi.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

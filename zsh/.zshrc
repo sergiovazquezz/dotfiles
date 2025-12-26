@@ -45,21 +45,29 @@ nvm alias default 'lts/*' > /dev/null 2>&1
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export FZF_DEFAULT_OPTS=" \
-    --color=fg:#cdcdcd \
-    --color=bg:#141415 \
-    --color=hl:#f3be7c \
-    --color=fg+:#aeaed1 \
-    --color=bg+:#252530 \
-    --color=hl+:#f3be7c \
-    --color=border:#606079 \
-    --color=header:#6e94b2 \
-    --color=gutter:#141415 \
-    --color=spinner:#7fa563 \
-    --color=info:#f3be7c \
-    --color=pointer:#aeaed1 \
-    --color=marker:#d8647e \
-    --color=prompt:#bb9dbd"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none \
+  --color=bg+:#2d3f76 \
+  --color=bg:#1e2030 \
+  --color=border:#589ed7 \
+  --color=fg:#c8d3f5 \
+  --color=gutter:#1e2030 \
+  --color=header:#ff966c \
+  --color=hl+:#65bcff \
+  --color=hl:#65bcff \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#65bcff \
+  --color=query:#c8d3f5:regular \
+  --color=scrollbar:#589ed7 \
+  --color=separator:#ff966c \
+  --color=spinner:#ff007c \
+"
 
 # Aliases
 alias ls='eza'
@@ -74,6 +82,7 @@ alias cd='z'
 alias lg='lazygit'
 alias mu-d="cargo build --bins && cargo run --bin mueve-daemon"
 alias mu="cargo run --bin mueve"
+alias my-ip="ip a | rg en0 -A 3"
 
 precmd () {print -Pn "\e]0;%~\a"}
 

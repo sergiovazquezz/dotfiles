@@ -1,6 +1,10 @@
 return {
     {
         "folke/noice.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
         opts = {
             lsp = {
                 override = {
@@ -23,15 +27,40 @@ return {
                 },
             },
             presets = {
-                bottom_search = true,
-                command_palette = false,
+                bottom_search = false,
+                command_palette = true,
                 long_message_to_split = true,
                 lsp_doc_border = true,
             },
-            cmdline = {
-                enabled = true, -- Keep noice cmdline enabled
-                view = "cmdline", -- Use bottom cmdline view (like default Neovim)
-                format = { cmdline = { icon = " :" } },
+            views = {
+                cmdline_popup = {
+                    position = {
+                        row = 9,
+                        col = "50%",
+                    },
+                    size = {
+                        width = 50,
+                        height = "auto",
+                    },
+                },
+                popupmenu = {
+                    relative = "editor",
+                    position = {
+                        row = 14,
+                        col = "50%",
+                    },
+                    size = {
+                        width = 60,
+                        height = 10,
+                    },
+                    border = {
+                        style = "rounded",
+                        padding = { 0, 1 },
+                    },
+                    win_options = {
+                        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+                    },
+                },
             },
         },
     },

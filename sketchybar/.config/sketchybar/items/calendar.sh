@@ -1,11 +1,11 @@
 #!/bin/bash
 
 calendar=(
-    icon.y_offset=-1
-    padding_left=10
-    icon.padding_right=0
     padding_right=0
     update_freq=30
+    icon.drawing=off
+    label.padding_left=10
+    label.font="$FONT6:Bold:13.5"
     script="$PLUGIN_DIR/calendar.sh"
 )
 

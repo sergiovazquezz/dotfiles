@@ -1,11 +1,20 @@
 # Font:
+# font-family = FiraCode Nerd Font Mono
+# font-family = Iosevka Term
 font-family = JetBrainsMono Nerd Font
 font-size = 20
 font-thicken = true
-
+font-thicken-strength = 255
+font-style-bold = false
+font-style-italic = true
+font-style-bold-italic = false
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 
 # Window appearance:
-theme = Rose Pine
+# theme = Catppuccin Mocha
+theme = TokyoNight Moon
 window-colorspace = "display-p3"
 # background-opacity = 0.85
 # background-blur-radius = 75
@@ -14,9 +23,9 @@ window-save-state = always
 window-vsync = true
 
 # MacOS settings
-# macos-titlebar-style = hidden
-macos-option-as-alt = false
-# macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = hidden
+macos-option-as-alt = left
+macos-titlebar-proxy-icon = hidden
 
 # Window
 window-padding-balance = true
@@ -36,10 +45,7 @@ shell-integration-features = no-cursor,sudo,no-title
 clipboard-read = allow
 copy-on-select = clipboard
 
-# Shaders
-# custom-shader = shaders/cursor_blaze_tapered.glsl
-# custom-shader = shaders/cursor_frozen.glsl
-# custom-shader = shaders/cursor_frozen_tapered.glsl
-# custom-shader = shaders/cursor_smear.glsl
-# custom-shader = shaders/cursor_light.glsl
-# custom-shader = shaders/cursor_smear_fade.glsl
+keybind = clear
+keybind = option+backspace=text:\x1b\x7f
+keybind = command+c=copy_to_clipboard
+keybind = command+v=paste_from_clipboard

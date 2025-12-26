@@ -32,8 +32,6 @@ return {
             end,
             desc = "Find Config Files",
         },
-
-        -- Buffers
         {
             "<leader>fb",
             function()
@@ -41,7 +39,6 @@ return {
             end,
             desc = "Find Buffers",
         },
-        -- Grep / Search
         {
             "<leader>sG",
             function()
@@ -57,13 +54,13 @@ return {
             desc = "Word",
             mode = { "n", "x" },
         },
-        -- {
-        --     "<leader>sb",
-        --     function()
-        --         Snacks.picker.lines()
-        --     end,
-        --     desc = "Buffer Lines",
-        -- },
+        {
+            "<leader>sb",
+            function()
+                Snacks.picker.lines()
+            end,
+            desc = "Buffer Lines",
+        },
         {
             "<leader>sg",
             function()
@@ -71,7 +68,6 @@ return {
             end,
             desc = "Grep Open Buffers",
         },
-        -- LSP
         {
             "<leader>ls",
             function()
@@ -86,7 +82,6 @@ return {
             end,
             desc = "Workspace Symbols",
         },
-        -- Git
         {
             "<leader>gc",
             function()
@@ -129,8 +124,6 @@ return {
             end,
             desc = "Quickfix List",
         },
-
-        -- Notifications
         {
             "<leader>sn",
             function()
@@ -185,7 +178,7 @@ return {
         },
         notifier = {
             enabled = true,
-            timeout = 5000,
+            timeout = 7000,
         },
         quickfile = {
             enabled = true,
@@ -222,12 +215,12 @@ return {
             },
             sources = {
                 files = {
-                    hidden = false, -- Hide dotfiles in picker
-                    ignored = false, -- Hide ignored files in picker
+                    hidden = false,
+                    ignored = false,
                 },
                 explorer = {
-                    hidden = true, -- Show dotfiles in explorer
-                    ignored = true, -- Show ignored files in explorer
+                    hidden = true,
+                    ignored = true,
                     layout = {
                         auto_hide = { "input" },
                     },
