@@ -21,20 +21,40 @@ return {
         ft = { "rust" },
         config = function()
             vim.g.rustaceanvim = {
+                tools = {
+                    float_win_config = {
+                        border = "rounded",
+                    },
+                },
                 server = {
+                    status_notify_level = false,
                     on_attach = function(_, bufnr)
-                        vim.keymap.set("n", "cR", function()
-                            vim.cmd.RustLsp("codeAction")
-                        end, { desc = "Code Action", buffer = bufnr })
-                        vim.keymap.set("n", "dr", function()
-                            vim.cmd.RustLsp("debuggables")
-                        end, { desc = "Rust Debuggables", buffer = bufnr })
+                        local opts = { buffer = bufnr }
+
+                        vim.keymap.set("n", "<leader>ce", function()
+                            vim.cmd.RustLsp("explainError")
+                        end, vim.tbl_extend("force", opts, { desc = "Explain Error" }))
+
+                        vim.keymap.set("n", "<leader>cd", function()
+                            vim.cmd.RustLsp("renderDiagnostic")
+                        end, vim.tbl_extend("force", opts, { desc = "Render Diagnostic" }))
+
+                        -- Navigation
+                        vim.keymap.set("n", "<leader>cc", function()
+                            vim.cmd.RustLsp("openCargo")
+                        end, vim.tbl_extend("force", opts, { desc = "Open Cargo.toml" }))
+
+                        vim.keymap.set("n", "<leader>cD", function()
+                            vim.cmd.RustLsp("openDocs")
+                        end, vim.tbl_extend("force", opts, { desc = "Open docs.rs" }))
+
+                        -- Code insight
+                        vim.keymap.set("n", "<leader>cm", function()
+                            vim.cmd.RustLsp("expandMacro")
+                        end, vim.tbl_extend("force", opts, { desc = "Expand Macro" }))
                     end,
                     default_settings = {
                         ["rust-analyzer"] = {
-                            rustfmt = {
-                                extraArgs = { "+nightly" },
-                            },
                             cargo = {
                                 allFeatures = true,
                                 loadOutDirsFromCheck = true,
@@ -43,8 +63,12 @@ return {
                                 },
                             },
                             checkOnSave = true,
+                            check = { command = "clippy", features = "all" },
                             diagnostics = {
                                 enable = true,
+                            },
+                            notifications = {
+                                cargoTomlNotFound = false,
                             },
                             procMacro = {
                                 enable = true,

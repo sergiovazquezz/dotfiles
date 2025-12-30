@@ -17,11 +17,17 @@ keybinds clear-defaults=true {
         bind "Super 7" { GoToTab 7; }
         bind "Super 8" { GoToTab 8; }
         bind "Super 9" { GoToTab 9; }
+        bind "Super H" { MoveTab "Left"; }
+        bind "Super L" { MoveTab "Right"; }
         bind "Super e" { SwitchToMode "scroll"; }
         bind "Super f" { SwitchToMode "search"; }
         bind "Super r" { SwitchToMode "renametab"; }
         bind "Ctrl t" { NewPane; }
         bind "Ctrl s" { NewPane "down"; }
+        bind "Ctrl H" { MovePane "Left"; }
+        bind "Ctrl J" { MovePane "Down"; }
+        bind "Ctrl K" { MovePane "Up"; }
+        bind "Ctrl L" { MovePane "Right"; }
         bind "Ctrl w" { CloseFocus; }
         bind "Ctrl q" { Quit; }
     }
