@@ -1,0 +1,4 @@
+brave-bin
+floorp-bin
+yay
+yay-debug
