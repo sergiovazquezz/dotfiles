@@ -2,7 +2,7 @@
 
 general() {
   cd ~/dotfiles/
-  stow bat btop clang eza ghostty kitty nvim prettier starship yazi zellij zsh
+  stow bat btop clang eza ghostty nvim prettier starship yazi zellij zsh
 }
 
 macos_clause() {
@@ -23,3 +23,4 @@ case "$OSTYPE" in
   *) echo "Unsupported OSTYPE: $OSTYPE" >&2; exit 1 ;;
 esac
 
+echo "Setup finished!"

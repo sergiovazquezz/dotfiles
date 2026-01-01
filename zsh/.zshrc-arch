@@ -21,7 +21,7 @@ esac
 source /usr/share/nvm/init-nvm.sh
 
 # Aliases
-alias pac-update-all="sudo pacman -Syu"
+alias pac-update-all="sudo pacman -Syu  && pacdiff"
 alias pac-search="sudo pacman -Ss"
 alias pac-install="sudo pacman -S"
 alias pac-info="sudo pacman -Si"
