@@ -10,8 +10,8 @@
 ## style-1   style-2   style-3   style-4   style-5
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-1"
-theme='style-1'
+dir="$HOME/.config/rofi"
+theme='powermenu'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -66,8 +66,8 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			amixer set Master mute
+			loginctl lock-session    # Lock first (hypridle behavior)
+			sleep 1                  # Brief delay for lock to engage
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
@@ -78,6 +78,8 @@ run_cmd() {
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]] || [[ "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
+				hyprctl dispatch exit
 			fi
 		fi
 	else
@@ -95,10 +97,8 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
+		if command -v hyprlock &> /dev/null; then
+			hyprlock
 		fi
         ;;
     $suspend)

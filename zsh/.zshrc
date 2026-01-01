@@ -7,6 +7,8 @@ case "$OSTYPE" in
     ;;
 esac
 
+bindkey -e
+
 # Completion
 autoload -Uz compinit
 compinit

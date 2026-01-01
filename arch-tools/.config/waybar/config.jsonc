@@ -1,0 +1,87 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", 
+    "position": "top", 
+    "height": 30, 
+    "spacing": 2, 
+    "modules-left": [
+        // "custom/empty",
+        "hyprland/workspaces",
+        "custom/sep",
+        "hyprland/window",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "custom/sep",
+        "network",
+        "custom/sep",
+        "cpu",
+        "custom/sep",
+        "memory",
+        "custom/sep",
+        "disk",
+        "custom/sep",
+        "clock",
+        "custom/sep",
+        "custom/power",
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*" : 7
+        }
+    },
+    "hyprland/window" : {
+        "max-length": 30,
+        "seperate-outputs": false
+    },
+     "clock": {
+        "format-alt": "{:%d-%m-%Y}",
+        "tooltip": false,
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+    },
+    "memory": {
+        "format": "Mem: {used}GiB"
+    },
+    "disk": {
+        "interval": 60,
+        "path": "/",
+        "format": "Disk: {free}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume: >3}%",
+        "format-bluetooth": "{icon} {volume: >3}%",
+        "format-muted": " muted",
+        "format-icons": {
+            // "headphones": "",
+            // "handsfree": "",
+            // "headset": "",
+            "default": ["", ""]
+        },
+    },
+    "network": {
+        "format": "Online",
+        "format-disconnected": "Disconnected"
+    },
+    "custom/power": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": " ⏻ ",
+        },
+        "on-click": "$HOME/.config/rofi/powermenu.sh",
+        "tooltip": false,
+    },
+    "custom/sep": {
+        "format" : "|",
+    },
+    "custom/empty": {
+        "format": "   ",
+    }
+}

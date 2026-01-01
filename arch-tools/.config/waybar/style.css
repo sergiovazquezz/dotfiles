@@ -1,0 +1,114 @@
+@define-color bg    #191B29;
+@define-color fg    #a9b1d6;
+@define-color blk   #32344a;
+@define-color red   #f7768e;
+@define-color grn   #c3e88d;
+@define-color org   #ff966c;
+@define-color ylw   #ffc777;
+@define-color blu   #82aaff;
+@define-color mag   #c099ff;
+@define-color cyn   #86e1fc;
+@define-color brblk #444b6a;
+@define-color white #ffffff;
+
+* {
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @bg;
+    color: @fg;
+}
+
+window#waybar > box {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @cyn;
+    background: transparent;
+    border-bottom: 3px solid @bg;
+    border-radius: 0px;
+}
+#workspaces button.active {
+    color: @cyn;
+    border-bottom: 3px solid @mag;
+}
+#workspaces button.empty {
+    color: @white;
+}
+#workspaces button.empty.active {
+    color: @white;
+    border-bottom: 3px solid @mag;
+}
+
+#workspaces button.urgent {
+    border-bottom: 3px solid @red;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: none;
+}
+
+#clock,
+#custom-sep,
+#battery,
+#cpu,
+#memory,
+#disk,
+#network,
+#tray,
+#idle_inhibitor {
+    padding: 0 8px;
+    color: @white;
+}
+
+#custom-sep {
+    color: @brblk;
+}
+
+#clock {
+    color: @ylw;
+    /* border-bottom: 3px solid @cyn; */
+}
+
+#disk {
+    color: @cyn;
+    /* border-bottom: 3px solid @org; */
+}
+
+#memory {
+    color: @mag;
+    /* border-bottom: 3px solid @mag; */
+}
+
+#cpu {
+    color: @org;
+    /* border-bottom: 3px solid @grn; */
+}
+
+#network {
+    color: @grn;
+    /* border-bottom: 3px solid @blu; */
+}
+
+#network.disconnected {
+    background-color: @red;
+}
+
+#pulseaudio {
+    color: @blu;
+}
+
+#custom-power {
+    color: @red;
+}
+
+#tray {
+    background-color: #2980b9;
+}
