@@ -1,0 +1,90 @@
+# Swaylock configuration
+# Replaces hyprlock for Niri
+# Use with swaylock-effects for full feature parity (clock, effects)
+# https://github.com/mortie/swaylock-effects
+
+# ─────────────────────────────────────────────────────────────────────────────
+# General
+# ─────────────────────────────────────────────────────────────────────────────
+
+daemonize
+ignore-empty-password
+show-failed-attempts
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Appearance
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Background
+image=~/Pictures/wallpapers/mac-purple.jpg
+scaling=fill
+
+# Font (for swaylock-effects)
+font=JetBrainsMonoNL Nerd Font
+font-size=24
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Clock (swaylock-effects only)
+# ─────────────────────────────────────────────────────────────────────────────
+
+clock
+timestr=%H:%M
+datestr=%A, %d %B %Y
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Effects (swaylock-effects only)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Uncomment for blur effect (may impact performance)
+# effect-blur=5x3
+
+# Fade in animation
+fade-in=0.2
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Indicator
+# ─────────────────────────────────────────────────────────────────────────────
+
+indicator
+indicator-radius=100
+indicator-thickness=10
+indicator-caps-lock
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Colors
+# Matching your hyprlock theme with gradient-inspired colors
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Ring colors (outer circle)
+ring-color=33ccffee
+ring-ver-color=00ff99ee
+ring-wrong-color=ff6633ee
+ring-clear-color=ffffff22
+
+# Key highlight
+key-hl-color=00ff99ee
+bs-hl-color=ff6633ee
+
+# Separator
+separator-color=00000000
+
+# Inside colors (inner circle)
+inside-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+inside-clear-color=00000000
+
+# Line colors (between ring and inside)
+line-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+line-clear-color=00000000
+
+# Text colors
+text-color=8f8f8fff
+text-ver-color=00ff99ff
+text-wrong-color=ff6633ff
+text-clear-color=ffffffff
+
+# Layout text
+layout-text-color=8f8f8fff

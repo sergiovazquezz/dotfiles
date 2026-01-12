@@ -3,4 +3,3 @@ IndentWidth: 4
 UseTab: Never
 TabWidth: 4
 BreakBeforeBraces: Linux
-SpaceBeforeParens: Never

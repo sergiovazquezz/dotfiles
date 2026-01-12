@@ -1,0 +1,333 @@
+// Niri Configuration
+// Based on mango/hyprland configs
+// https://github.com/YaLTeR/niri/wiki/Configuration
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Environment Variables (NVIDIA RTX 5070)
+// ─────────────────────────────────────────────────────────────────────────────
+
+environment {
+    LIBVA_DRIVER_NAME "nvidia"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+    NVD_BACKEND "direct"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    // XCURSOR_SIZE "24"
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Input Configuration
+// ─────────────────────────────────────────────────────────────────────────────
+
+input {
+    keyboard {
+        xkb {
+            layout "es"
+        }
+        repeat-delay 600
+        repeat-rate 25
+    }
+
+    mouse {
+        accel-profile "flat"
+        accel-speed 0.15
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        accel-profile "adaptive"
+    }
+
+    // Focus follows mouse
+    focus-follows-mouse
+    // Warp mouse to focused window
+    warp-mouse-to-focus mode="center-xy"
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Output (Monitor) Configuration
+// ─────────────────────────────────────────────────────────────────────────────
+
+output "DP-1" {
+    mode "3840x2160@144"
+    scale 1.5
+    // position x=0 y=0
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Layout Configuration
+// ─────────────────────────────────────────────────────────────────────────────
+
+layout {
+    // Gaps matching mango config
+    gaps 5
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.    
+    center-focused-column "never"
+
+    // Default column width
+    default-column-width { proportion 0.5; }
+
+    // Preset column widths for cycling
+    preset-column-widths {
+        proportion 0.5
+        proportion 1.0
+    }
+
+    // Focus ring (border)
+    focus-ring {
+        off
+        width 2
+        active-color "#82aaff"
+        inactive-color "#595959"
+    }
+
+    // Border (disabled, using focus-ring instead)
+    border {
+        width 2
+        active-color "#82aaff"
+        inactive-color "#595959"
+    }
+
+    // Struts (outer gaps)
+    struts {
+        left 30
+        right 30
+        top 30
+        bottom 30
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Window Rules
+// ─────────────────────────────────────────────────────────────────────────────
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Animations
+// ─────────────────────────────────────────────────────────────────────────────
+
+animations {
+    // Uncomment to disable all animations
+    // off
+
+    // Slow down animations for debugging
+    // slowdown 2.0
+
+    workspace-switch {
+        duration-ms 350
+        curve "ease-out-expo"
+    }
+
+    window-open {
+        duration-ms 400
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+
+    horizontal-view-movement {
+        duration-ms 500
+        curve "ease-out-expo"
+    }
+
+    window-movement {
+        duration-ms 500
+        curve "ease-out-expo"
+    }
+
+    window-resize {
+        duration-ms 500
+        curve "ease-out-expo"
+    }
+
+    config-notification-open-close {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cursor
+// ─────────────────────────────────────────────────────────────────────────────
+
+cursor {
+    xcursor-size 28
+    xcursor-theme "capitaine-cursors-light"
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Screenshot Path
+// ─────────────────────────────────────────────────────────────────────────────
+
+screenshot-path "~/Pictures/screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png"
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Spawn at Startup
+// ─────────────────────────────────────────────────────────────────────────────
+
+spawn-at-startup "kitty"
+spawn-sh-at-startup "waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/style.css"
+spawn-sh-at-startup "swaybg -i /home/sergio/Pictures/wallpapers/deer-purple.png -m fill"
+spawn-at-startup "nm-applet"
+spawn-at-startup "swaync"
+spawn-sh-at-startup "swayidle -w"
+spawn-sh-at-startup "keyd-application-mapper -d"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+spawn-sh-at-startup "wl-clip-persist --clipboard regular"
+spawn-at-startup "/usr/lib/pam_kwallet_init"
+spawn-sh-at-startup "walker --gapplication-service"
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Hotkey Overlay (disable if you want)
+// ─────────────────────────────────────────────────────────────────────────────
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Key Bindings
+// ─────────────────────────────────────────────────────────────────────────────
+
+binds {
+    // ─────────────────────────────────────────────────────────────────────────
+    // Applications
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+T { spawn "kitty"; }
+    Ctrl+Alt+Super+G { spawn "brave" "--password-store=kwallet6"; }
+    Ctrl+Alt+Super+S { spawn "nautilus"; }
+    Ctrl+Alt+Super+Space { spawn-sh "rofi -show drun -theme ~/.config/rofi/launcher.rasi"; }
+    Ctrl+Alt+Super+Y { spawn "walker"; }
+    Ctrl+Alt+Super+N { spawn-sh "swaync-client -t -sw"; }
+    Ctrl+Alt+Super+V { spawn "~/.config/scripts/rofi-clipboard.sh"; }
+    Ctrl+Alt+Super+M { spawn "~/.config/scripts/powermenu.sh"; }
+
+    // Screenshots (using your existing scripts)
+    Print { spawn "~/.config/scripts/screenshot/region.sh"; }
+    Shift+Print { spawn "~/.config/scripts/screenshot/fullscreen.sh"; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Window Management
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+Q { close-window; }
+    Ctrl+Alt+Super+F { switch-preset-column-width; }
+    Ctrl+Alt+Super+Shift+F { fullscreen-window; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Focus Movement (hjkl)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+H { focus-column-left; }
+    Ctrl+Alt+Super+L { focus-column-right; }
+    Ctrl+Alt+Super+K { focus-window-up; }
+    Ctrl+Alt+Super+J { focus-window-down; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Window Movement (hjkl + Shift)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+Shift+H { move-column-left; }
+    Ctrl+Alt+Super+Shift+L { move-column-right; }
+    Ctrl+Alt+Super+Shift+K { move-window-up; }
+    Ctrl+Alt+Super+Shift+J { move-window-down; }
+
+    // Consume/expel windows from column
+    Ctrl+Alt+Super+Comma { consume-window-into-column; }
+    Ctrl+Alt+Super+Period { expel-window-from-column; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Workspace Navigation (1-7)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+1 { focus-workspace 1; }
+    Ctrl+Alt+Super+2 { focus-workspace 2; }
+    Ctrl+Alt+Super+3 { focus-workspace 3; }
+    Ctrl+Alt+Super+4 { focus-workspace 4; }
+    Ctrl+Alt+Super+5 { focus-workspace 5; }
+    Ctrl+Alt+Super+6 { focus-workspace 6; }
+    Ctrl+Alt+Super+7 { focus-workspace 7; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Move Window to Workspace (1-7)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+Shift+1 { move-column-to-workspace 1; }
+    Ctrl+Alt+Super+Shift+2 { move-column-to-workspace 2; }
+    Ctrl+Alt+Super+Shift+3 { move-column-to-workspace 3; }
+    Ctrl+Alt+Super+Shift+4 { move-column-to-workspace 4; }
+    Ctrl+Alt+Super+Shift+5 { move-column-to-workspace 5; }
+    Ctrl+Alt+Super+Shift+6 { move-column-to-workspace 6; }
+    Ctrl+Alt+Super+Shift+7 { move-column-to-workspace 7; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Resize (arrows)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+Left { set-column-width "-10%"; }
+    Ctrl+Alt+Super+Right { set-column-width "+10%"; }
+    Ctrl+Alt+Super+Up { set-window-height "-10%"; }
+    Ctrl+Alt+Super+Down { set-window-height "+10%"; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Mouse Scroll for Workspaces
+    // ─────────────────────────────────────────────────────────────────────────
+
+    Ctrl+Alt+Super+WheelScrollDown { focus-workspace-down; }
+    Ctrl+Alt+Super+WheelScrollUp { focus-workspace-up; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Additional Useful Bindings
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Overview/Exposé
+    Ctrl+Alt+Super+Tab { toggle-overview; }
+
+    // Reload config
+    // Ctrl+Alt+Super+Shift+R { spawn "niri" "msg" "action" "reload-config-or-panic"; }
+    Ctrl+Alt+Super+W { spawn-sh "pkill waybar; waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/style.css";}
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Session Management
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Power off monitors (for idle)
+    // Ctrl+Alt+Super+P { power-off-monitors; }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Media Keys
+    // ─────────────────────────────────────────────────────────────────────────
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Example media keys mapping using playerctl.
+    // This will work with any MPRIS-enabled media player.
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    // Example brightness key mappings for brightnessctl.
+    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
+    // but you need to manually put each argument in separate "" quotes.
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+}

@@ -20,6 +20,12 @@ esac
 # Node Version Manager
 source /usr/share/nvm/init-nvm.sh
 
+# Add cargo to the PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Direnv
+eval "$(direnv hook zsh)"
+
 # Aliases
 alias pac-update-all="sudo pacman -Syu  && pacdiff"
 alias pac-search="sudo pacman -Ss"
@@ -28,4 +34,6 @@ alias pac-info="sudo pacman -Si"
 alias pac-remove="sudo pacman -Rns"
 alias pac-clear-cache="sudo pacman -Sc"
 alias pac-unused="sudo pacman -Qtdq"
-alias pac-query-installed="sudo pacman -Q"
+alias pac-query-installed="sudo pacman -Qsq"
+alias activate-idf='source "$HOME/.espressif/tools/activate_idf_v5.5.2.sh"'
+alias calc="bc -lq"

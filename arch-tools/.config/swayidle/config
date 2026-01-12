@@ -1,0 +1,15 @@
+# Swayidle configuration
+# Works with Mango, Niri, and other wlroots compositors
+# https://github.com/swaywm/swayidle
+
+# Lock before sleep
+before-sleep 'pidof hyprlock || hyprlock'
+
+# Lock session after 5 minutes (300 seconds)
+timeout 300 'pidof hyprlock || hyprlock'
+
+# Turn off displays after 10 minutes (600 seconds)
+timeout 600 'wlr-randr --output DP-1 --off' resume 'wlr-randr --output DP-1 --on'
+
+# Suspend after 60 minutes (3600 seconds)
+timeout 3600 'systemctl suspend'

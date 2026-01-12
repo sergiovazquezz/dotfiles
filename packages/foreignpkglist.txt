@@ -1,4 +1,15 @@
+bibata-cursor-theme-bin
 brave-bin
+cursor-bin
+elephant
+elephant-calc
+elephant-clipboard
+elephant-desktopapplications
+elephant-providerlist
 floorp-bin
-yay
+paru
+paru-debug
+sddm-silent-theme
+swaylock-effects
+walker
 yay-debug

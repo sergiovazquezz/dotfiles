@@ -1,5 +1,6 @@
-@define-color bg    #191B29;
-@define-color fg    #a9b1d6;
+/* @define-color bg    #191B29; */
+@define-color bg    #222436;
+@define-color fg    #DBE2F8;
 @define-color blk   #32344a;
 @define-color red   #f7768e;
 @define-color grn   #c3e88d;
@@ -23,8 +24,8 @@ window#waybar {
 }
 
 window#waybar > box {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #workspaces button {
@@ -39,10 +40,9 @@ window#waybar > box {
     border-bottom: 3px solid @mag;
 }
 #workspaces button.empty {
-    color: @white;
+    color: @fg;
 }
 #workspaces button.empty.active {
-    color: @white;
     border-bottom: 3px solid @mag;
 }
 
@@ -50,9 +50,31 @@ window#waybar > box {
     border-bottom: 3px solid @red;
 }
 
+#tags button {
+    padding: 0 6px;
+    color: @fg;
+    background: transparent;
+    border-bottom: 3px solid @bg;
+    border-radius: 0px;
+}
+#tags button.focused {
+    color: @fg;
+    border-bottom: 3px solid @mag;
+}
+#tags button.occupied {
+    color: @cyn;
+}
+#tags button.urgent {
+    border-bottom: 3px solid @red;
+}
+
 button:hover {
     background: inherit;
     box-shadow: none;
+}
+
+#window {
+    padding-left: 6px;
 }
 
 #clock,
@@ -63,50 +85,28 @@ button:hover {
 #disk,
 #network,
 #tray,
+#pulseaudio,
 #idle_inhibitor {
-    padding: 0 8px;
-    color: @white;
+    padding: 0 6px;
+    color: @fg;
 }
 
 #custom-sep {
     color: @brblk;
 }
 
-#clock {
-    color: @ylw;
-    /* border-bottom: 3px solid @cyn; */
-}
-
-#disk {
-    color: @cyn;
-    /* border-bottom: 3px solid @org; */
-}
-
-#memory {
-    color: @mag;
-    /* border-bottom: 3px solid @mag; */
-}
-
-#cpu {
-    color: @org;
-    /* border-bottom: 3px solid @grn; */
-}
-
-#network {
-    color: @grn;
-    /* border-bottom: 3px solid @blu; */
+#network.ethernet {
+    padding-left: 6px;
+    padding-right: 9px;
 }
 
 #network.disconnected {
-    background-color: @red;
-}
-
-#pulseaudio {
-    color: @blu;
+    color: @red;
 }
 
 #custom-power {
     color: @red;
+    font-size: 15px;
 }
 
 #tray {

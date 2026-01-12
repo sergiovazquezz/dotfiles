@@ -5,9 +5,9 @@
     "height": 30, 
     "spacing": 2, 
     "modules-left": [
-        "hyprland/workspaces",
+        "niri/workspaces",
         "custom/sep",
-        "hyprland/window",
+        "niri/window",
     ],
     "modules-center": [
     ],
@@ -26,28 +26,11 @@
         "custom/sep",
         "custom/power",
     ],
-    "hyprland/workspaces": {
-        "disable-scroll": true,
+    "niri/workspaces": {
         "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{name}",
-        "persistent-workspaces": {
-            "*" : 7
-        }
+        "format": "{index}",
     },
-    "hyprland/window" : {
-        "format": "{class}",
-        "max-length": 40,
-        "seperate-outputs": false,
-      "rewrite": {
-        "brave-browser": "Brave",
-        "kitty": "Kitty",
-        "org.gnome.Nautilus": "Nautilus",
-        "brave-mbcdepnllaabbjfehblkognmnejgfkic-Default": "Arch Wiki",
-        "org.wireshark.Wireshark": "Wireshark"
-      },
-    },
-    "dwl/window" : {
+    "niri/window" : {
         "format": "{app_id}",
         "max-length": 40,
       "rewrite": {
