@@ -67,6 +67,15 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=spinner:#ff007c \
 "
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
+bindkey ' ' magic-space
+
 if [[ -o interactive ]] && (( $+commands[fastfetch] )); then
   fastfetch
 fi

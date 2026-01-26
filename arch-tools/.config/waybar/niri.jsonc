@@ -12,19 +12,14 @@
     "modules-center": [
     ],
     "modules-right": [
-        "pulseaudio#mic",
-        "custom/sep",
-        "pulseaudio",
-        "custom/sep",
         "network",
-        "custom/sep",
+        "pulseaudio#mic",
+        "pulseaudio",
+        // "group/audio",
         "cpu",
-        "custom/sep",
         "memory",
-        "custom/sep",
+        // "group/resources",
         "clock",
-        "custom/sep",
-        "custom/power",
     ],
     "niri/workspaces": {
         "all-outputs": true,
@@ -41,15 +36,15 @@
         "org.wireshark.Wireshark": "Wireshark"
       },
     },
-     "clock": {
-        "format-alt": "{:%d-%m-%Y}",
+    "clock": {
+        "format-alt": "{:%H:%M %b %d}",
         "tooltip": false,
     },
     "cpu": {
         "format": "  {usage}%",
     },
     "memory": {
-        "format": "{icon}  {used}GB",
+        "format": "{icon}  {used}GiB",
         "format-icons": {
             "default": "",
         },
@@ -102,5 +97,19 @@
     },
     "custom/empty": {
         "format": " ",
+    },
+    "group/resources": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+        ]
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#mic",
+            "pulseaudio",
+        ]
     }
 }

@@ -1,6 +1,12 @@
-/* @define-color bg    #191B29; */
-@define-color bg    #222436;
+@define-color bg    #1a1b26;
+@define-color bg-2  #1f202d;
+@define-color bg-3  #212331;
+@define-color bg-4  #242535;
+@define-color bg-5  #272839;
+@define-color bg-6  #292b3c;
+@define-color bg-7  #2c2d40;
 @define-color fg    #DBE2F8;
+@define-color fg-2  #c0caf5;
 @define-color blk   #32344a;
 @define-color red   #f7768e;
 @define-color grn   #c3e88d;
@@ -11,6 +17,7 @@
 @define-color cyn   #86e1fc;
 @define-color brblk #444b6a;
 @define-color white #ffffff;
+@define-color outline #353D57;
 
 * {
     font-family: 'JetBrainsMono Nerd Font', monospace;
@@ -19,13 +26,15 @@
 }
 
 window#waybar {
-    background-color: @bg;
+    background-color: transparent;
     color: @fg;
 }
 
 window#waybar > box {
-    padding-left: 16px;
-    padding-right: 16px;
+    /* margin: 6px 8px 0px 8px; */
+    padding: 0px 16px;
+    background-color: @bg;
+    /* border-radius: 18px; */
 }
 
 #workspaces button {
@@ -50,63 +59,43 @@ window#waybar > box {
     border-bottom: 3px solid @red;
 }
 
-#tags button {
-    padding: 0 6px;
-    color: @fg;
-    background: transparent;
-    border-bottom: 3px solid @bg;
-    border-radius: 0px;
-}
-#tags button.focused {
-    color: @fg;
-    border-bottom: 3px solid @mag;
-}
-#tags button.occupied {
-    color: @cyn;
-}
-#tags button.urgent {
-    border-bottom: 3px solid @red;
-}
-
-button:hover {
-    background: inherit;
-    box-shadow: none;
-}
-
 #window {
-    padding-left: 6px;
+    padding-left: 10px;
 }
 
+/* Global to all items */
 #clock,
-#custom-sep,
 #battery,
-#cpu,
-#memory,
 #disk,
 #network,
 #tray,
 #pulseaudio,
-#idle_inhibitor {
-    padding: 0 6px;
+#idle_inhibitor,
+#cpu,
+#memory,
+#custom-sep {
     color: @fg;
+    padding: 2px 10px;
+    background-color: @bg-6;
+    border-radius: 14px;
+    font-size: 14px;
+    margin: 4px 4px;
 }
 
 #custom-sep {
     color: @brblk;
+    background-color: @bg;
+    padding: 0px 6px;
 }
 
+/* Network items */
 #network.ethernet {
-    padding-left: 6px;
-    padding-right: 9px;
+    padding-left: 11px;
+    padding-right: 15px;
 }
 
 #network.disconnected {
     color: @red;
-}
-
-#custom-power {
-    color: @red;
-    font-size: 15px;
 }
 
 #tray {

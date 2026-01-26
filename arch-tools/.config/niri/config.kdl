@@ -11,7 +11,6 @@ environment {
     __GLX_VENDOR_LIBRARY_NAME "nvidia"
     NVD_BACKEND "direct"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
-    // XCURSOR_SIZE "24"
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -29,7 +28,7 @@ input {
 
     mouse {
         accel-profile "flat"
-        accel-speed 0.15
+        accel-speed -0.02
     }
 
     touchpad {
@@ -79,16 +78,14 @@ layout {
         proportion 1.0
     }
 
-    // Focus ring (border)
     focus-ring {
-        off
         width 2
         active-color "#82aaff"
         inactive-color "#595959"
     }
 
-    // Border (disabled, using focus-ring instead)
     border {
+        off
         width 2
         active-color "#82aaff"
         inactive-color "#595959"
@@ -108,7 +105,7 @@ layout {
 // ─────────────────────────────────────────────────────────────────────────────
 
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 12
     clip-to-geometry true
 }
 
@@ -164,8 +161,10 @@ animations {
 // ─────────────────────────────────────────────────────────────────────────────
 
 cursor {
-    xcursor-size 28
-    xcursor-theme "capitaine-cursors-light"
+    // xcursor-size 28
+    // xcursor-theme "capitaine-cursors-light"
+    xcursor-size 20
+    xcursor-theme "Bibata-Modern-Ice"
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -178,18 +177,21 @@ screenshot-path "~/Pictures/screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png"
 // Spawn at Startup
 // ─────────────────────────────────────────────────────────────────────────────
 
-spawn-at-startup "kitty"
-spawn-sh-at-startup "waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/style.css"
-spawn-sh-at-startup "swaybg -i /home/sergio/Pictures/wallpapers/deer-purple.png -m fill"
+spawn-at-startup "/usr/lib/pam_kwallet_init"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "nm-applet"
-spawn-at-startup "swaync"
-spawn-sh-at-startup "swayidle -w"
 spawn-sh-at-startup "keyd-application-mapper -d"
+spawn-sh-at-startup "swayidle -w"
+spawn-sh-at-startup "waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/style.css"
+spawn-sh-at-startup "swaybg -i /home/sergio/Pictures/wallpapers/pond.png -m fill"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
-spawn-at-startup "/usr/lib/pam_kwallet_init"
-spawn-sh-at-startup "walker --gapplication-service"
+spawn-at-startup "swaync"
+spawn-at-startup "kitty"
+
+// spawn-sh-at-startup "vicinae server"
+// spawn-sh-at-startup "qs -c noctalia-shell"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Hotkey Overlay (disable if you want)
@@ -210,16 +212,30 @@ binds {
 
     Ctrl+Alt+Super+T { spawn "kitty"; }
     Ctrl+Alt+Super+G { spawn "brave" "--password-store=kwallet6"; }
-    Ctrl+Alt+Super+S { spawn "nautilus"; }
-    Ctrl+Alt+Super+Space { spawn-sh "rofi -show drun -theme ~/.config/rofi/launcher.rasi"; }
-    Ctrl+Alt+Super+Y { spawn "walker"; }
-    Ctrl+Alt+Super+N { spawn-sh "swaync-client -t -sw"; }
+    Ctrl+Alt+Super+E { spawn "nautilus"; }
+    // Ctrl+Alt+Super+Space { spawn-sh "rofi -show drun -theme ~/.config/rofi/launcher.rasi"; }
+    // Ctrl+Alt+Super+Space { spawn "wofi" "--show" "drun"; }
+    Ctrl+Alt+Super+Space { spawn "fuzzel"; }
     Ctrl+Alt+Super+V { spawn "~/.config/scripts/rofi-clipboard.sh"; }
-    Ctrl+Alt+Super+M { spawn "~/.config/scripts/powermenu.sh"; }
+    Ctrl+Alt+Super+M { spawn "~/.config/scripts/fuzzel-powermenu.sh"; }
+    Ctrl+Alt+Super+N { spawn-sh "swaync-client -t -sw"; }
 
-    // Screenshots (using your existing scripts)
-    Print { spawn "~/.config/scripts/screenshot/region.sh"; }
-    Shift+Print { spawn "~/.config/scripts/screenshot/fullscreen.sh"; }
+    // Screenshots
+    Ctrl+Alt+Super+S { screenshot-screen; }
+    Shift+Print { screenshot-window; }
+    Print { screenshot; }
+
+
+    // Vicinae
+    // Ctrl+Alt+Super+Space { spawn "vicinae" "toggle"; }
+    // Ctrl+Alt+Super+V repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+
+    // Noctalia
+    // Ctrl+Alt+Super+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    // Ctrl+Alt+Super+N { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    // Ctrl+Alt+Super+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+    // Ctrl+Alt+Super+S { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+    // Ctrl+Alt+Super+M { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
     // ─────────────────────────────────────────────────────────────────────────
     // Window Management
@@ -301,6 +317,7 @@ binds {
     // Reload config
     // Ctrl+Alt+Super+Shift+R { spawn "niri" "msg" "action" "reload-config-or-panic"; }
     Ctrl+Alt+Super+W { spawn-sh "pkill waybar; waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/style.css";}
+    Ctrl+Alt+Super+P { spawn-sh "pkill swaybg; swaybg -i /home/sergio/Pictures/wallpapers/blue-green-lake.jpg -m fill";}
 
     // ─────────────────────────────────────────────────────────────────────────
     // Session Management
@@ -330,4 +347,18 @@ binds {
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+}
+
+debug {
+  honor-xdg-activation-with-invalid-serial
+}
+
+prefer-no-csd
+
+window-rule {
+    match app-id="wofi"
+    
+    focus-ring {
+        off
+    }
 }

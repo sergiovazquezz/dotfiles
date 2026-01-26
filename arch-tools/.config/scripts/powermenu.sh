@@ -70,7 +70,9 @@ run_cmd() {
 			sleep 1                  # Brief delay for lock to engage
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
+            if [[ "$DESKTOP_SESSION" == 'niri' ]] || [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
+				niri msg action quit
+			elif [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
@@ -80,8 +82,6 @@ run_cmd() {
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]] || [[ "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
 				hyprctl dispatch exit
-			elif [[ "$DESKTOP_SESSION" == 'niri' ]] || [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]]; then
-				niri msg action quit
 			elif [[ "$DESKTOP_SESSION" == 'mango' ]] || [[ "$XDG_CURRENT_DESKTOP" == 'mango' ]]; then
 				pkill mango
 			fi
@@ -101,11 +101,11 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ "$XDG_CURRENT_DESKTOP" == 'mango' ]] && command -v swaylock &> /dev/null; then
+        if [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]] && command -v hyprlock &> /dev/null; then
+			hyprlock
+		elif [[ "$XDG_CURRENT_DESKTOP" == 'mango' ]] && command -v swaylock &> /dev/null; then
 			swaylock
 		elif [[ "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]] && command -v hyprlock &> /dev/null; then
-			hyprlock
-		elif [[ "$XDG_CURRENT_DESKTOP" == 'niri' ]] && command -v hyprlock &> /dev/null; then
 			hyprlock
 		elif command -v hyprlock &> /dev/null; then
 			hyprlock
