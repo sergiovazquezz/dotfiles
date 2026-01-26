@@ -15,26 +15,38 @@ return {
                     lualine_a = {
                         { "mode" }, -- icon = ""
                     },
-                    lualine_c = {
-                        {
-                            "filetype",
-                            icon_only = true,
-                            padding = { left = 1, right = 0 },
-                            separator = "",
-                        },
-                        {
-                            "filename",
-                            color = { fg = "#E1DEF6" },
-                            padding = { left = 0, right = 0 },
-                            separator = "",
-                        },
-                    },
                     lualine_b = {
                         {
                             "branch",
                             icon = "",
                             -- icon = "",
                             -- icon = "󰊤",
+                        },
+                    },
+                    lualine_c = {
+                        -- {
+                        --     "filetype",
+                        --     icon_only = true,
+                        --     padding = { left = 1, right = 0 },
+                        --     separator = "",
+                        -- },
+                        -- {
+                        --     "filename",
+                        --     color = { fg = "#E1DEF6" },
+                        --     padding = { left = 0, right = 0 },
+                        --     separator = "",
+                        -- },
+                        {
+                            "buffers",
+                            -- use_mode_colors = true,
+                            buffers_color = {
+                                active = { fg = "#E1DEF6" }, -- needs to be a table
+                            },
+                            symbols = {
+                                modified = " ●",
+                                alternate_file = "",
+                                directory = "",
+                            },
                         },
                     },
                     lualine_x = {

@@ -24,12 +24,14 @@ return {
                     "tailwindcss",
                     "zls",
                     "gopls",
+                    "asm_lsp",
 
                     -- Formatters and linters
                     "prettierd",
                     "eslint_d",
                     "ruff",
                     "stylua",
+                    "asmfmt",
 
                     -- Go tools
                     "goimports",

@@ -54,6 +54,9 @@ return {
                     "zig",
                     "ninja",
                     "rst",
+                    "make",
+                    "cmake",
+                    "nasm",
                 },
                 auto_install = true,
             })

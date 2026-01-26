@@ -75,7 +75,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window", silent =
 -- Undo
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Search
@@ -108,3 +108,17 @@ require("lazy").setup({
 })
 
 vim.cmd("colorscheme tokyonight")
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = "",
+    },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "",
+        },
+    },
+})
