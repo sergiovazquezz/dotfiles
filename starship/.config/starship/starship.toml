@@ -9,10 +9,10 @@ add_newline = false
 disabled = true
 
 [character]
-success_symbol = '[➜](bold green)'
-error_symbol = '[➜](bold red)'
-# success_symbol = '[❯](bold green)'
-# error_symbol = '[❯](bold red)'
+# success_symbol = '[➜](bold green)'
+# error_symbol = '[➜](bold red)'
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
 # success_symbol = "[\\$](green)"
 # error_symbol = "[\\$](red)"
 
@@ -71,13 +71,18 @@ disabled = false
 
 [c]
 symbol = ""
-commands = [['gcc-15', '--version']]
-format = "via [$symbol](bold yellow) [$version](yellow) "
+# commands = [['gcc-15', '--version']]
+# format = "via [$symbol](bold yellow) [$version](yellow) "
+format = "via [$symbol](bold yellow) "
+detect_extensions = ['c']
 
 [cpp]
+disabled = false
 symbol = ""
-commands = [['g++-15', '--version']]
-format = "via [$symbol](yellow) [$version](yellow) "
+# commands = [['g++-15', '--version']]
+# format = "via [$symbol](yellow) [$version](yellow) "
+format = "via [$symbol](yellow) "
+detect_extensions = ['cpp', 'cc', 'cxx', 'c++', 'tcc']
 
 [elixir]
 symbol = " "

@@ -1,9 +1,5 @@
-// Niri Configuration
-// Based on mango/hyprland configs
-// https://github.com/YaLTeR/niri/wiki/Configuration
-
 // ─────────────────────────────────────────────────────────────────────────────
-// Environment Variables (NVIDIA RTX 5070)
+// Environment Variables
 // ─────────────────────────────────────────────────────────────────────────────
 
 environment {
@@ -37,14 +33,12 @@ input {
         accel-profile "adaptive"
     }
 
-    // Focus follows mouse
     focus-follows-mouse
-    // Warp mouse to focused window
     warp-mouse-to-focus mode="center-xy"
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Output (Monitor) Configuration
+// Monitor Configuration
 // ─────────────────────────────────────────────────────────────────────────────
 
 output "DP-1" {
@@ -58,21 +52,12 @@ output "DP-1" {
 // ─────────────────────────────────────────────────────────────────────────────
 
 layout {
-    // Gaps matching mango config
     gaps 5
 
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "always", the focused column will always be centered.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.    
     center-focused-column "never"
 
-    // Default column width
     default-column-width { proportion 0.5; }
 
-    // Preset column widths for cycling
     preset-column-widths {
         proportion 0.5
         proportion 1.0
@@ -91,7 +76,7 @@ layout {
         inactive-color "#595959"
     }
 
-    // Struts (outer gaps)
+    // Outer gaps
     struts {
         left 30
         right 30
@@ -114,12 +99,6 @@ window-rule {
 // ─────────────────────────────────────────────────────────────────────────────
 
 animations {
-    // Uncomment to disable all animations
-    // off
-
-    // Slow down animations for debugging
-    // slowdown 2.0
-
     workspace-switch {
         duration-ms 350
         curve "ease-out-expo"
@@ -190,9 +169,6 @@ spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-at-startup "swaync"
 spawn-at-startup "kitty"
 
-// spawn-sh-at-startup "vicinae server"
-// spawn-sh-at-startup "qs -c noctalia-shell"
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Hotkey Overlay (disable if you want)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -225,17 +201,7 @@ binds {
     Shift+Print { screenshot-window; }
     Print { screenshot; }
 
-
-    // Vicinae
-    // Ctrl+Alt+Super+Space { spawn "vicinae" "toggle"; }
-    // Ctrl+Alt+Super+V repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
-
-    // Noctalia
-    // Ctrl+Alt+Super+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    // Ctrl+Alt+Super+N { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    // Ctrl+Alt+Super+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-    // Ctrl+Alt+Super+S { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    // Ctrl+Alt+Super+M { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Ctrl+Alt+Super+P { spawn "~/.config/scripts/pacman-install-popup.sh"; }
 
     // ─────────────────────────────────────────────────────────────────────────
     // Window Management
@@ -317,7 +283,6 @@ binds {
     // Reload config
     // Ctrl+Alt+Super+Shift+R { spawn "niri" "msg" "action" "reload-config-or-panic"; }
     Ctrl+Alt+Super+W { spawn-sh "pkill waybar; waybar -c ~/.config/waybar/niri.jsonc -s ~/.config/waybar/style.css";}
-    Ctrl+Alt+Super+P { spawn-sh "pkill swaybg; swaybg -i /home/sergio/Pictures/wallpapers/blue-green-lake.jpg -m fill";}
 
     // ─────────────────────────────────────────────────────────────────────────
     // Session Management
@@ -361,4 +326,11 @@ window-rule {
     focus-ring {
         off
     }
+}
+
+window-rule {
+    match app-id="floating-popup"
+    open-floating true
+    default-window-height { fixed 600; }
+    default-column-width { fixed 1200; }
 }

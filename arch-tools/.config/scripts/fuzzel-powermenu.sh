@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Options with icons
-lock=' Lock'
-logout=' Logout'
-suspend=' Suspend'
-reboot=' Reboot'
-shutdown=' Shutdown'
+lock=' Lock'
+logout=' Logout'
+suspend=' Suspend'
+reboot=' Reboot'
+shutdown=' Shutdown'
 
 # Main menu
 chosen=$(echo -e "$lock\\n$logout\\n$suspend\\n$reboot\\n$shutdown" | fuzzel --dmenu \
