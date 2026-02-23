@@ -10,3 +10,4 @@ ReferenceAlignment: Pointer
 AllowShortFunctionsOnASingleLine: All # Inline
 Cpp11BracedListStyle: false
 SpaceBeforeCpp11BracedList: false
+BreakTemplateDeclarations: Yes

@@ -17,6 +17,7 @@ return {
                 { "<leader>l", group = "lsp" },
                 { "<leader>x", group = "diagnostics/quickfix" },
                 { "<leader>e", group = "yazi" },
+                { "<leader>w", group = "window" },
                 { "g", group = "goto" },
             },
         },

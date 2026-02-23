@@ -30,6 +30,9 @@ export EZA_ICONS_AUTO=always
 export EZA_ICON_SPACING=1
 
 # Aliases
+alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'
 alias ls='eza'
 alias cat='bat'
 alias vim='nvim'

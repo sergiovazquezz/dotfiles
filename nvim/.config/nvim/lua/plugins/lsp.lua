@@ -63,7 +63,7 @@ return {
                     local opts = { buffer = ev.buf }
 
                     -- Enable inlay hints for this buffer
-                    vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+                    vim.lsp.inlay_hint.enable(false, { bufnr = ev.buf })
 
                     -- Navigation (using Snacks picker)
                     vim.keymap.set("n", "gd", function()

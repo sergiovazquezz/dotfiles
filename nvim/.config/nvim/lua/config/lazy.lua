@@ -64,13 +64,21 @@ vim.keymap.set("n", "<leader>uc", ":NoNeckPain<CR>", { desc = "Zen Mode", silent
 -- Buffer navigation
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer", silent = true })
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer", silent = true })
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close buffer", silent = true })
+vim.keymap.set("n", "<leader>bd", ":BufferClose<CR>", { desc = "Close buffer", silent = true })
 
--- Window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window", silent = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window", silent = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window", silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window", silent = true })
+-- Tab navigation
+vim.keymap.set("n", "<A-t>", ":tabnew<CR>", { silent = true })
+vim.keymap.set("n", "<A-w>", ":tabclose<CR>", { silent = true })
+vim.keymap.set("n", "<A-l>", ":tabnext<CR>", { silent = true })
+vim.keymap.set("n", "<A-h>", ":tabprevious<CR>", { silent = true })
+
+-- Window (pane) navigation
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window", silent = true })
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window", silent = true })
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window", silent = true })
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window", silent = true })
+vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Create vertical split", silent = true })
+vim.keymap.set("n", "<leader>wd", ":dsplit<CR>", { desc = "Delete split", silent = true })
 
 -- Undo
 vim.opt.swapfile = false
@@ -90,6 +98,8 @@ vim.opt.guicursor = "n-v-c-i:block"
 -- Lang
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "es" }
+
+vim.o.showtabline = 2
 
 vim.api.nvim_create_autocmd("VimLeave", {
     callback = function()
