@@ -117,7 +117,7 @@ require("lazy").setup({
     checker = { enabled = false },
 })
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme kanagawa")
 
 vim.diagnostic.config({
     virtual_text = {
