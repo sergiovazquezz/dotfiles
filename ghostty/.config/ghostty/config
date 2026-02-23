@@ -1,16 +1,11 @@
 # Font:
 # font-family = FiraCode Nerd Font Mono
-# font-family = Iosevka Term
-font-family = JetBrainsMono Nerd Font
-font-size = 20
-font-thicken = true
+font-family = IosevkaTerm NFM
+font-size = 22
+# font-family = JetBrainsMono Nerd Font
+# font-size = 20
+# font-thicken = true
 font-thicken-strength = 255
-font-style-bold = false
-font-style-italic = true
-font-style-bold-italic = false
-font-feature = -calt
-font-feature = -liga
-font-feature = -dlig
 
 # Window appearance:
 # theme = Catppuccin Mocha

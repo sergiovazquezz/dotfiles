@@ -43,3 +43,5 @@ alias prettier-write='pnpm dlx prettier . --write'
 alias drizzle-studio-bun='bun drizzle-kit studio --verbose'
 alias prettier-write-bun='bunx prettier . --write'
 alias my-ip="ip a | rg en0 -A 3"
+alias cc="gcc-15"
+alias c++="g++-15"
