@@ -1,4 +1,4 @@
-BasedOnStyle: GNU
+BasedOnStyle: LLVM
 IndentWidth: 4
 UseTab: Never
 TabWidth: 4
@@ -12,3 +12,5 @@ PointerAlignment: Left
 DerivePointerAlignment: false
 ReferenceAlignment: Pointer
 BreakTemplateDeclarations: Yes
+AlwaysBreakAfterReturnType: None
+BreakAfterReturnType: None
