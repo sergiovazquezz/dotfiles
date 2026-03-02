@@ -38,8 +38,6 @@ alias cat='bat'
 alias vim='nvim'
 alias cd='z'
 alias lg='lazygit'
-alias mu-d="cargo build --bins && cargo run --bin mueve-daemon"
-alias mu="cargo run --bin mueve"
 
 # Update terminal title
 precmd () {print -Pn "\e]0;%~\a"}
@@ -78,6 +76,9 @@ zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
 bindkey ' ' magic-space
+
+# GCC cross compiler
+export PATH="$HOME/opt/cross/bin:$PATH"
 
 if [[ -o interactive ]] && (( $+commands[fastfetch] )); then
   fastfetch

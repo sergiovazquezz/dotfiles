@@ -44,6 +44,7 @@ keybinds clear-defaults=true {
     session {}
     shared_among "resize" "scroll" "search" "session" {
         bind "esc" { SwitchToMode "normal"; }
+        bind "q" { SwitchToMode "normal"; }
     }
     shared_among "scroll" "search" {
         bind "down" { ScrollDown; }
@@ -175,7 +176,8 @@ simplified_ui true
 // Default: default
 //
 // theme "tokyonight_moon"
-theme "kanagawa"
+// theme "kanagawa"
+theme "rose-pine-moon"
 
 // Choose the base input mode of zellij.
 // Default: normal
@@ -272,7 +274,7 @@ pane_frames false
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
 //
-copy_on_select false
+copy_on_select true
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
