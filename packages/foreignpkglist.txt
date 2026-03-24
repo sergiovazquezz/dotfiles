@@ -1,6 +1,5 @@
 bibata-cursor-theme-bin
 brave-bin
-cursor-bin
 paru
 paru-debug
 sddm-silent-theme

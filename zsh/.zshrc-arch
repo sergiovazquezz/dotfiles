@@ -50,3 +50,4 @@ alias paru-list-installed="paru -Qm"
 alias activate-idf='source "$HOME/.espressif/tools/activate_idf_v5.5.2.sh"'
 alias calc="bc -lq"
 alias fm="(nautilus . > /dev/null 2>&1 &)"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
