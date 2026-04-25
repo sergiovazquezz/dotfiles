@@ -38,7 +38,7 @@ inner.horizontal = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
 inner.vertical = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
 outer.left = [{ monitor.built-in = 5 }, { monitor.main = 59 }, 55]
 outer.right = [{ monitor.built-in = 5 }, { monitor.main = 59 }, 55]
-outer.top = [{ monitor.built-in = 12 }, { monitor.main = 60 }, 55]
+outer.top = [{ monitor.built-in = 12 }, { monitor.main = 40 }, 20]
 outer.bottom = [{ monitor.built-in = 6 }, { monitor.main = 50 }, 55]
 
 [mode.main.binding]
