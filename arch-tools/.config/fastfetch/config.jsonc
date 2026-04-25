@@ -4,6 +4,10 @@
         "type": "small",
         "padding": {
             "top": 1
+        },
+        "color": {
+            "1": "blue",
+            "2": "blue"
         }
     },
     "display": {

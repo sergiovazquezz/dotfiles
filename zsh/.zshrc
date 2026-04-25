@@ -38,6 +38,7 @@ alias cat='bat'
 alias vim='nvim'
 alias cd='z'
 alias lg='lazygit'
+alias gdb='gdb -q'
 
 # Update terminal title
 precmd () {print -Pn "\e]0;%~\a"}

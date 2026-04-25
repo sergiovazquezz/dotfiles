@@ -172,11 +172,6 @@ web_client {
 //
 simplified_ui true
 
-// Choose the theme that is specified in the themes section.
-// Default: default
-//
-// theme "tokyonight_moon"
-// theme "kanagawa"
 theme "rose-pine-moon"
 
 // Choose the base input mode of zellij.

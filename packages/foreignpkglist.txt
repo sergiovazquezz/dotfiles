@@ -1,7 +1,6 @@
-bibata-cursor-theme-bin
 brave-bin
+noctalia-shell
 paru
 paru-debug
-sddm-silent-theme
 vesktop-bin
 visual-studio-code-bin

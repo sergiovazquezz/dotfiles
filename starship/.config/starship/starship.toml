@@ -1,5 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# format = "$username$directory$git_branch$git_status$cmd_duration$status$character"
+
 # Wait 10ms to check files under the current directory
 scan_timeout = 10
 
@@ -11,10 +13,12 @@ disabled = true
 [character]
 # success_symbol = '[➜](bold green)'
 # error_symbol = '[➜](bold red)'
-success_symbol = '[❯](bold green)'
-error_symbol = '[❯](bold red)'
-# success_symbol = "[\\$](green)"
-# error_symbol = "[\\$](red)"
+# success_symbol = '[❯](bold green)'
+# error_symbol = '[❯](bold red)'
+# success_symbol = '[›](bold green)'
+# error_symbol = '[›](bold red)'
+success_symbol = "[\\$](green)"
+error_symbol = "[\\$](red)"
 
 [package]
 disabled = true
@@ -27,15 +31,15 @@ format = '󰩟 [$localipv4](bold red) '
 
 [username]
 disabled = true
-style_user = "green bold"
+style_user = "yellow bold"
 style_root = "red bold"
-format = "[$user]($style) "
+format = "[$user]($style)"
 show_always = true
 
 [hostname]
 disabled = true
 ssh_only = false
-format = 'on [$hostname](bold yellow) '
+format = "[@$hostname](bold yellow) "
 trim_at = "."
 
 [directory]

@@ -88,7 +88,7 @@
         "format-icons": {
             "default": " ⏻ ",
         },
-        "on-click": "$HOME/.config/rofi/powermenu.sh",
+        "on-click": "$HOME/.config/scripts/fuzzel-powermenu.sh",
         "tooltip": false,
     },
     "custom/sep": {

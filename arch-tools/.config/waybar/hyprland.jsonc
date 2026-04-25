@@ -1,8 +1,8 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", 
-    "position": "top", 
-    "height": 30, 
+    "layer": "bottom", 
+    "position": "bottom", 
+    "height": 35, 
     "spacing": 2, 
     "modules-left": [
         "hyprland/workspaces",
@@ -12,19 +12,14 @@
     "modules-center": [
     ],
     "modules-right": [
-        "pulseaudio#mic",
-        "custom/sep",
-        "pulseaudio",
-        "custom/sep",
         "network",
-        "custom/sep",
+        "pulseaudio#mic",
+        "pulseaudio",
+        // "group/audio",
         "cpu",
-        "custom/sep",
         "memory",
-        "custom/sep",
+        // "group/resources",
         "clock",
-        "custom/sep",
-        "custom/power",
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -32,8 +27,8 @@
         "warp-on-scroll": false,
         "format": "{name}",
         "persistent-workspaces": {
-            "*" : 7
-        }
+            "*" : 7,
+        },
     },
     "hyprland/window" : {
         "format": "{class}",
@@ -59,14 +54,14 @@
       },
     },
      "clock": {
-        "format-alt": "{:%d-%m-%Y}",
+        "format": "{:%H:%M %b %d}",
         "tooltip": false,
     },
     "cpu": {
         "format": "  {usage}%",
     },
     "memory": {
-        "format": "{icon}  {used}GB",
+        "format": "{icon}  {used}GiB",
         "format-icons": {
             "default": "",
         },
@@ -75,7 +70,7 @@
     "disk": {
         "interval": 60,
         "path": "/",
-        "format": "Disk: {free}"
+        "format": "Disk: {free}",
     },
     "pulseaudio": {
         "format": "{icon} {volume: >3}%",
@@ -110,7 +105,7 @@
         "format-icons": {
             "default": " ⏻ ",
         },
-        "on-click": "$HOME/.config/rofi/powermenu.sh",
+        "on-click": "$HOME/.config/scripts/fuzzel-powermenu.sh",
         "tooltip": false,
     },
     "custom/sep": {
@@ -119,5 +114,19 @@
     },
     "custom/empty": {
         "format": " ",
-    }
+    },
+    "group/resources": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+        ]
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#mic",
+            "pulseaudio",
+        ],
+    },
 }
