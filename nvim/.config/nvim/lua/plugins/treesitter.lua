@@ -21,7 +21,6 @@ return {
             "javascript",
             "jsdoc",
             "json",
-            "jsonc",
             "luap",
             "python",
             "query",
