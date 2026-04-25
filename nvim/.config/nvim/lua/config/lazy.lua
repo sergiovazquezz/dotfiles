@@ -29,6 +29,8 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.clipboard = "unnamedplus"
 
+vim.opt.showmode = false
+
 -- Set tab to 4 spaces
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -117,7 +119,7 @@ require("lazy").setup({
     checker = { enabled = false },
 })
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme catppuccin")
 
 vim.diagnostic.config({
     virtual_text = {
