@@ -39,7 +39,6 @@ vim.opt.expandtab = true
 vim.opt.list = false
 vim.opt.smartindent = true
 
-vim.opt.hlsearch = false -- Highlight search results
 vim.opt.scrolloff = 18
 vim.opt.ignorecase = true -- Make commands case insensitive
 vim.opt.backspace = { "start", "eol", "indent" }
@@ -102,6 +101,12 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "es" }
 
 vim.o.showtabline = 2
+
+vim.keymap.set("i", "<Tab>", "<Tab>", {
+    noremap = true,
+    silent = true,
+    desc = "Insert tab",
+})
 
 vim.api.nvim_create_autocmd("VimLeave", {
     callback = function()

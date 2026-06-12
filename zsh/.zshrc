@@ -34,40 +34,18 @@ alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
 alias ls='eza'
+alias ll='eza -l'
 alias cat='bat'
 alias vim='nvim'
 alias cd='z'
 alias lg='lazygit'
 alias gdb='gdb -q'
+alias zathura='zathura --fork'
 
 # Update terminal title
 precmd () {print -Pn "\e]0;%~\a"}
 
 export EDITOR=nvim
-
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none \
-  --color=bg+:#2d3f76 \
-  --color=bg:#222436 \
-  --color=border:#589ed7 \
-  --color=fg:#c8d3f5 \
-  --color=gutter:#1e2030 \
-  --color=header:#ff966c \
-  --color=hl+:#65bcff \
-  --color=hl:#65bcff \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#65bcff \
-  --color=query:#c8d3f5:regular \
-  --color=scrollbar:#589ed7 \
-  --color=separator:#ff966c \
-  --color=spinner:#ff007c \
-"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"

@@ -42,6 +42,7 @@ return {
                         "--html-whitespace-sensitivity=ignore",
                         "--arrow-parens=always",
                         "--print-width=80",
+                        "--prose-wrap=always",
                     },
                 },
             },
