@@ -1,6 +1,7 @@
-brave-bin
+brave-origin-beta-bin
 noctalia-shell
 paru
 paru-debug
+qdiskinfo-bin
 vesktop-bin
 visual-studio-code-bin

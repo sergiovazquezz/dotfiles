@@ -21,8 +21,8 @@ cmake
 dfu-util
 direnv
 dkms
+dns-over-https
 dnsmasq
-dolphin
 efibootmgr
 evtest
 eza
@@ -31,11 +31,14 @@ fastfetch
 fd
 ffmpeg4.4
 firefox
+fish
 fuzzel
 fzf
 gdb
+gimp
 git
 gnome-calculator
+gnome-keyring
 go
 gobject-introspection
 gperf
@@ -45,7 +48,6 @@ gst-plugins-bad
 guestfs-tools
 htop
 hyprland
-hyprpolkitagent
 imagemagick
 imv
 inetutils
@@ -54,8 +56,6 @@ iwd
 jq
 keyd
 kitty
-kwallet-pam
-kwalletmanager
 lazygit
 ldns
 ldproxy
@@ -78,7 +78,9 @@ man-pages
 mpv
 mtools
 nasm
+nautilus
 neovim
+nethogs
 network-manager-applet
 networkmanager
 nmap
@@ -90,6 +92,7 @@ npm
 nvidia-open-dkms
 nvm
 nvtop
+openai-codex
 opencode
 openresolv
 openrgb
@@ -97,6 +100,7 @@ ouch
 pacman-contrib
 pandoc-cli
 papirus-icon-theme
+pavucontrol
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -114,6 +118,7 @@ resvg
 rustup
 sbctl
 screen
+seahorse
 slurp
 smartmontools
 snapper
@@ -129,6 +134,7 @@ texlive-latexextra
 texlive-latexrecommended
 tk
 tree-sitter-cli
+ttf-fantasque-nerd
 ttf-firacode-nerd
 ttf-iosevka-nerd
 ttf-iosevkaterm-nerd
