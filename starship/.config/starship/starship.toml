@@ -8,17 +8,17 @@ scan_timeout = 10
 add_newline = false
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 # success_symbol = '[➜](bold green)'
 # error_symbol = '[➜](bold red)'
-# success_symbol = '[❯](bold green)'
-# error_symbol = '[❯](bold red)'
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
 # success_symbol = '[›](bold green)'
 # error_symbol = '[›](bold red)'
-success_symbol = "[\\$](green)"
-error_symbol = "[\\$](red)"
+# success_symbol = "[\\$](green)"
+# error_symbol = "[\\$](red)"
 
 [package]
 disabled = true
@@ -31,7 +31,7 @@ format = '󰩟 [$localipv4](bold red) '
 
 [username]
 disabled = true
-style_user = "yellow bold"
+style_user = "purple bold"
 style_root = "red bold"
 format = "[$user]($style)"
 show_always = true
@@ -39,7 +39,7 @@ show_always = true
 [hostname]
 disabled = true
 ssh_only = false
-format = "[@$hostname](bold yellow) "
+format = "[@$hostname](bold purple): "
 trim_at = "."
 
 [directory]
