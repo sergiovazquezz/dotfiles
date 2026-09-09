@@ -24,22 +24,22 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = true
 
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-]
+# exec-on-workspace-change = [
+#   '/bin/bash',
+#   '-c',
+#   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+# ]
 
 [key-mapping]
 preset = 'qwerty'
 
 [gaps]
-inner.horizontal = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
-inner.vertical = [{ monitor.built-in = 9 }, { monitor.main = 15 }, 15]
-outer.left = [{ monitor.built-in = 5 }, { monitor.main = 59 }, 55]
-outer.right = [{ monitor.built-in = 5 }, { monitor.main = 59 }, 55]
-outer.top = [{ monitor.built-in = 12 }, { monitor.main = 40 }, 20]
-outer.bottom = [{ monitor.built-in = 6 }, { monitor.main = 50 }, 55]
+inner.horizontal = [{ monitor.built-in = 5 }, { monitor.main = 15 }, 15]
+inner.vertical = [{ monitor.built-in = 5 }, { monitor.main = 15 }, 15]
+outer.left = [{ monitor.built-in = 0 }, { monitor.main = 59 }, 55]
+outer.right = [{ monitor.built-in = 0 }, { monitor.main = 59 }, 55]
+outer.top = [{ monitor.built-in = 3 }, { monitor.main = 40 }, 20]
+outer.bottom = [{ monitor.built-in = 0 }, { monitor.main = 50 }, 55]
 
 [mode.main.binding]
 # ctrl-alt-cmd-g = 'exec-and-forget open -a /Applications/Zen.app'

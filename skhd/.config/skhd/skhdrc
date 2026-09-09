@@ -1,0 +1,68 @@
+# ============================================================================
+# Space Switching
+# ============================================================================
+
+# Switch to space 1-5
+cmd + shift - 1 : mueve switch-space 1
+cmd + shift - 2 : mueve switch-space 2
+cmd + shift - 3 : mueve switch-space 3
+cmd + shift - 4 : mueve switch-space 4
+cmd + shift - 5 : mueve switch-space 5
+
+# ============================================================================
+# Window Management - Moving Windows Between Spaces
+# ============================================================================
+
+# Move focused window to space (requires getting window ID first)
+# Note: These are placeholder examples. You'll need to script getting the active window ID.
+# See "Advanced Usage" section below for scripting examples.
+
+# Move window to space 1-5 (example with hardcoded window ID)
+# cmd + alt - 1 : mueve move-window <WINDOW_ID> 1
+# cmd + alt - 2 : mueve move-window <WINDOW_ID> 2
+# cmd + alt - 3 : mueve move-window <WINDOW_ID> 3
+# cmd + alt - 4 : mueve move-window <WINDOW_ID> 4
+# cmd + alt - 5 : mueve move-window <WINDOW_ID> 5
+
+# ============================================================================
+# Application Focusing/Executing
+# ============================================================================
+
+# Focus specific applications by bundle identifier
+cmd + shift - return : mueve focus-app com.apple.Terminal
+cmd + shift - b : mueve focus-app com.google.Chrome
+cmd + shift - c : mueve focus-app com.microsoft.VSCode
+cmd + shift - f : mueve focus-app org.mozilla.firefox
+
+# ============================================================================
+# Tips
+# ============================================================================
+#
+# 1. Reload skhd config after changes:
+#    brew services restart skhd
+#    OR: skhd --reload
+#
+# 2. Check skhd status:
+#    brew services list | grep skhd
+#
+# 3. View skhd logs:
+#    tail -f /opt/homebrew/var/log/skhd/skhd.log
+#    (or /usr/local/var/log/skhd/skhd.log on Intel Macs)
+#
+# 4. Test commands manually first:
+#    mueve list-windows
+#    mueve switch-space 1
+#
+# 5. Common modifier combinations:
+#    - cmd + shift : Primary window manager shortcuts
+#    - cmd + alt : Secondary actions
+#    - cmd + ctrl : System-level actions
+#
+# 6. Finding bundle identifiers:
+#    osascript -e 'id of app "AppName"'
+#    Example: osascript -e 'id of app "Safari"'
+#    Returns: com.apple.Safari
+#
+# 7. Avoiding conflicts:
+#    macOS reserves many cmd + key combinations. If a shortcut doesn't work,
+#    try using cmd + shift + key or cmd + alt + key instead.
